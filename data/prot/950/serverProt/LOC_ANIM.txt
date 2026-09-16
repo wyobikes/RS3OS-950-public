@@ -1,0 +1,4 @@
+delayOrSpeed ubyte
+anim intv1
+coord ubytec
+shapeRotation ubyte

@@ -1,0 +1,86 @@
+package com.opennxt.net.game.clientprot
+
+import com.opennxt.net.game.GamePacket
+import com.opennxt.net.game.pipeline.DynamicGamePacketCodec
+import com.opennxt.net.game.protocol.PacketFieldDeclaration
+
+sealed class IfButtonN(
+    val buttonOp: Int,
+    val hash: Int,
+    val mid: Int,
+    val arg2: Int
+) : GamePacket {
+    val interfaceId: Int get() = (hash shr 16) and 0xffff
+    val component: Int get() = hash and 0xffff
+
+    val altSlot: Int get() = (mid shr 8) and 0xffff
+    val altItem: Int get() = ((mid and 0xff) shl 8) or ((arg2 shr 8) and 0xff)
+    val altFlags: Int get() = arg2 and 0xff
+
+    override fun toString(): String =
+        "IF_BUTTON$buttonOp(interface=$interfaceId, component=$component, mid=$mid, arg2=$arg2)"
+
+    abstract class Codec<T : IfButtonN>(fields: Array<PacketFieldDeclaration>) : DynamicGamePacketCodec<T>(fields) {
+        protected abstract fun create(hash: Int, mid: Int, arg2: Int): T
+
+        override fun fromMap(packet: Map<String, Any>): T =
+            create(packet["arg1"] as Int, packet["component"] as Int, packet["arg2"] as Int)
+
+        override fun toMap(packet: T): Map<String, Any> =
+            mapOf("arg1" to packet.hash, "component" to packet.mid, "arg2" to packet.arg2)
+    }
+}
+
+class IfButton2(hash: Int, mid: Int, arg2: Int) : IfButtonN(2, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton2>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton2(hash, mid, arg2)
+    }
+}
+
+class IfButton3(hash: Int, mid: Int, arg2: Int) : IfButtonN(3, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton3>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton3(hash, mid, arg2)
+    }
+}
+
+class IfButton4(hash: Int, mid: Int, arg2: Int) : IfButtonN(4, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton4>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton4(hash, mid, arg2)
+    }
+}
+
+class IfButton5(hash: Int, mid: Int, arg2: Int) : IfButtonN(5, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton5>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton5(hash, mid, arg2)
+    }
+}
+
+class IfButton6(hash: Int, mid: Int, arg2: Int) : IfButtonN(6, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton6>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton6(hash, mid, arg2)
+    }
+}
+
+class IfButton7(hash: Int, mid: Int, arg2: Int) : IfButtonN(7, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton7>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton7(hash, mid, arg2)
+    }
+}
+
+class IfButton8(hash: Int, mid: Int, arg2: Int) : IfButtonN(8, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton8>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton8(hash, mid, arg2)
+    }
+}
+
+class IfButton9(hash: Int, mid: Int, arg2: Int) : IfButtonN(9, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton9>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton9(hash, mid, arg2)
+    }
+}
+
+class IfButton10(hash: Int, mid: Int, arg2: Int) : IfButtonN(10, hash, mid, arg2) {
+    class Codec(fields: Array<PacketFieldDeclaration>) : IfButtonN.Codec<IfButton10>(fields) {
+        override fun create(hash: Int, mid: Int, arg2: Int) = IfButton10(hash, mid, arg2)
+    }
+}

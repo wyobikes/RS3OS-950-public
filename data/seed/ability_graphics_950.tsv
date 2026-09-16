@@ -1,0 +1,136 @@
+struct_id	name	tier	proposed_animation	proposed_graphic
+49531	Basic Attack	anim=none graphic=none		
+14678	Barge	anim=MID graphic=LOW	37394	9018
+14679	Adaptive Strike	anim=HIGH graphic=none	37392	
+52781	Rend	anim=LOW graphic=none	37416	
+14682	Backhand	anim=MID graphic=LOW	18154	4574
+14684	Flurry	anim=MID graphic=LOW	37428	9016
+14686	Overpower	anim=MID graphic=LOW	18179	3584
+14688	Meteor Strike	anim=MID graphic=LOW	18175	3583
+47129	Dive	anim=LOW graphic=none	35755	
+1488	Bladed Dive	anim=LOW graphic=none	35626	
+44244	Dismember	anim=MID graphic=none	37412	
+14700	Punish	anim=MID graphic=LOW	18560	946
+14701	Fury	anim=MID graphic=LOW	37425	3467
+14704	Assault	anim=HIGH graphic=HIGH	18577	9078
+14685	Hurricane	anim=MID graphic=LOW	37437	9017
+14707	Berserk	anim=LOW graphic=LOW	35132	7797
+14709	Pulverise	anim=MID graphic=MID	18540	3473
+46279	Chaos Roar	anim=MID graphic=none	34957	
+52795	Basic Attack	anim=none graphic=none		
+14663	Piercing Shot	anim=MID graphic=LOW	37473	4590
+14664	Binding Shot	anim=MID graphic=LOW	18461	3488
+14665	Escape	anim=LOW graphic=LOW	18527	3526
+14666	Snipe	anim=MID graphic=LOW	37498	9029
+14668	Ricochet	anim=MID graphic=none	37478	
+14669	Snap Shot	anim=MID graphic=LOW	37451	9042
+14670	Rapid Fire	anim=MID graphic=LOW	37488	9024
+52796	Imbue: Shadows	anim=MID graphic=none	37519	
+14671	Bombardment	anim=MID graphic=LOW	18506	3524
+14674	Deadshot	anim=MID graphic=LOW	37530	9048
+19251	Death's Swiftness	anim=LOW graphic=LOW	19879	3869
+52799	Galeshot	anim=LOW graphic=none	37451	
+28177	Shadow Tendrils	anim=LOW graphic=none	23631	
+31986	Corruption Shot	anim=LOW graphic=none	18522	
+45801	Quiver ammo slot 1	anim=none graphic=none		
+45802	Quiver ammo slot 2	anim=none graphic=none		
+52777	Basic Attack	anim=none graphic=none		
+14725	Runic Charge	anim=MID graphic=LOW	18355	3530
+14726	Surge	anim=LOW graphic=LOW	37099	3537
+14727	Impact	anim=MID graphic=none	37358	
+14728	Chain	anim=MID graphic=LOW	37355	3553
+14729	Combust	anim=MID graphic=LOW	37350	8169
+14730	Dragon Breath	anim=MID graphic=LOW	36640	3561
+14731	Asphyxiate	anim=MID graphic=LOW	37352	3541
+14733	Wild Magic	anim=MID graphic=none	37366	
+14735	Tsunami	anim=MID graphic=LOW	37101	3549
+14736	Omnipower	anim=MID graphic=LOW	37360	3564
+19342	Sonic Wave	anim=MID graphic=LOW	36651	9008
+19343	Concentrated Blast	anim=MID graphic=LOW	37340	8971
+19254	Sunshine	anim=LOW graphic=LOW	18364	3856
+28180	Smoke Tendrils	anim=LOW graphic=LOW	23641	4665
+31985	Corruption Blast	anim=MID graphic=none	23958	
+37220	Golden Touch	anim=none graphic=none		
+45800	Magma Tempest (Targeted)	anim=MID graphic=none	34546	
+28927	Magma Tempest	anim=MID graphic=none	34546	
+48293	Basic Attack	anim=none graphic=none		
+48302	Conjure Skeleton Warrior	anim=MID graphic=MID	35502	7899
+48304	Conjure Putrid Zombie	anim=MID graphic=MID	35502	7899
+48306	Conjure Vengeful Ghost	anim=MID graphic=MID	35502	7899
+31820	Conjure Phantom Guardian	anim=MID graphic=MID	35502	7899
+33965	Conjure Undead Army	anim=MID graphic=MID	35502	7899
+48296	Touch of Death	anim=MID graphic=MID	35456	7859
+48297	Finger of Death	anim=MID graphic=MID	35458	7861
+48298	Soul Sap	anim=MID graphic=MID	35461	7863
+48299	Soul Strike	anim=MID graphic=MID	35466	7871
+48301	Volley of Souls	anim=LOW graphic=LOW	35469	7874
+48308	Bloat	anim=MID graphic=MID	35477	7884
+48309	Blood Siphon	anim=MID graphic=MID	35482	7889
+48311	Spectral Scythe	anim=MID graphic=LOW	35489	7893
+48314	Death Skulls	anim=MID graphic=MID	35472	7881
+48324	Living Death	anim=MID graphic=LOW	35475	7883
+48325	City of Um Teleport	anim=none graphic=none		
+49390	Ungael Teleport	anim=none graphic=none		
+48328	Life Transfer	anim=LOW graphic=LOW	35508	7903
+48326	Lesser Bone Shield	anim=none graphic=LOW		7905
+48327	Greater Bone Shield	anim=none graphic=LOW		7906
+48329	Threads of Fate	anim=LOW graphic=LOW	35506	7901
+48330	Invoke Death	anim=none graphic=MID		7907
+48331	Darkness	anim=none graphic=LOW		7908
+48332	Split Soul	anim=LOW graphic=none	35516	
+49072	Invoke Lord of Bones	anim=none graphic=MID		8115
+14710	Anticipation	anim=MID graphic=LOW	18069	8133
+14711	Freedom	anim=MID graphic=LOW	18070	8134
+14712	Provoke	anim=LOW graphic=none	18130	
+14713	Resonance	anim=LOW graphic=none	18081	
+14714	Preparation	anim=LOW graphic=LOW	18106	3614
+14715	Bash	anim=MID graphic=none	18080	
+14716	Reflect	anim=MID graphic=LOW	18107	3615
+14717	Debilitate	anim=MID graphic=none	18074	
+14718	Revenge	anim=MID graphic=LOW	18098	3616
+14719	Barricade	anim=MID graphic=LOW	18091	3632
+14720	Rejuvenate	anim=MID graphic=LOW	18082	3617
+14721	Immortality	anim=LOW graphic=LOW	18124	3623
+19252	Natural Instinct	anim=LOW graphic=LOW	19858	3855
+25028	Devotion	anim=none graphic=none		
+37206	Unsullied	anim=none graphic=none		
+37207	Aggression	anim=none graphic=none		
+45045	Divert	anim=none graphic=none		
+45340	Cease	anim=none graphic=none		
+14690	Regenerate	anim=none graphic=none		
+14691	Incite	anim=none graphic=none		
+14693	Balanced Stance	anim=none graphic=none		
+14694	Defensive Stance	anim=none graphic=none		
+14695	Aggressive Stance	anim=none graphic=none		
+19253	Guthix's Blessing	anim=LOW graphic=LOW	19831	3850
+24188	Sacrifice	anim=MID graphic=LOW	22338	4495
+24189	Transfigure	anim=none graphic=LOW		4505
+28179	Ice Asylum	anim=LOW graphic=none	23207	
+28429	Siphon	anim=LOW graphic=LOW	18205	4504
+28430	Weapon Special Attack	anim=none graphic=none		
+24362	Shout - Tofu	anim=none graphic=none		
+24363	Shout - Crackers	anim=none graphic=none		
+24364	Shout - Worms	anim=none graphic=none		
+24365	Shout - Red Egg	anim=none graphic=none		
+24366	Shout - Green Egg	anim=none graphic=none		
+24367	Shout - Blue Egg	anim=none graphic=none		
+24368	Shout - Poisoned Worms	anim=none graphic=none		
+24369	Shout - Poisoned Tofu	anim=none graphic=none		
+24370	Shout - Poisoned Meat	anim=none graphic=none		
+24371	Shout - Balanced Stance	anim=none graphic=none		
+24372	Shout - Aggressive Stance	anim=none graphic=none		
+24373	Shout - Defensive Stance	anim=none graphic=none		
+31649	Tuska's Wrath	anim=LOW graphic=none	18355	
+31982	Storm Shards	anim=LOW graphic=none	26979	
+31983	Shatter	anim=MID graphic=none	26980	
+31984	Onslaught	anim=MID graphic=none	26960	
+33650	Reprisal	anim=none graphic=none		
+37199	Ingenuity of the Humans	anim=none graphic=none		
+37200	Demon Slayer	anim=none graphic=none		
+37201	Dragon Slayer	anim=none graphic=none		
+37202	Undead Slayer	anim=none graphic=none		
+37203	Limitless	anim=none graphic=none		
+37204	Slayer's Insight	anim=none graphic=none		
+37205	Kuradal's Favour	anim=none graphic=none		
+44225	Eat Food	anim=none graphic=none		
+11748	Essence of Finality	anim=none graphic=none		

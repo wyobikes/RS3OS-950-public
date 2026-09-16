@@ -1,0 +1,7 @@
+tag intv1
+rotation ubyte
+subtile umediumx2
+slot ubyte128
+height ushort128
+spotanim ushortle128
+delay ushortle128

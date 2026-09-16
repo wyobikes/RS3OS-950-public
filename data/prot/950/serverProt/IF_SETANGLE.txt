@@ -1,0 +1,4 @@
+slot0 ushort
+slot1 ushortle
+slot2 ushort
+component intv2

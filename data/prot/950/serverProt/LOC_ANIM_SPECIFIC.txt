@@ -1,0 +1,4 @@
+arg ubyte
+shaperot ubyte
+coord intv1
+anim intv2

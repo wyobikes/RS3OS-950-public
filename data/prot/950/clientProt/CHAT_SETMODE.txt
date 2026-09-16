@@ -1,0 +1,2 @@
+mode ubyte
+arg ubyte

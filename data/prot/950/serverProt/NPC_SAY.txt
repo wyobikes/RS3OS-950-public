@@ -1,0 +1,4 @@
+text string
+npc ushort
+a ubytec
+b ubytec

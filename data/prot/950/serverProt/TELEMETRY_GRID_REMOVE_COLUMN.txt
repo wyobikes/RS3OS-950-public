@@ -1,0 +1,2 @@
+table ubytec
+column ubyte128

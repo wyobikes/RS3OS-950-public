@@ -1,0 +1,6 @@
+unused ubyte
+xz ubyte
+expiry ushort
+height ubyte
+rgb umedium
+text string

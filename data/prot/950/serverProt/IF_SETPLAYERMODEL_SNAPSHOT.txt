@@ -1,0 +1,2 @@
+component intv2
+snapshot ubyte

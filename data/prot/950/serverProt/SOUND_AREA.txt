@@ -1,0 +1,6 @@
+xz ubyte
+sound int
+countradius ubyte
+loop ubyte
+volume ubyte
+extra ushort

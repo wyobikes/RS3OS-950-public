@@ -1,0 +1,5 @@
+player ushortle128
+selsub ushort128
+selhash intv1
+selobj umediumle
+ctrl ubyte

@@ -1,0 +1,4 @@
+coord ubyte
+id umedium
+oldCount ushort
+newCount ushort

@@ -1,0 +1,4 @@
+mode ubyte
+width ushort
+height ushort
+trailing ubyte

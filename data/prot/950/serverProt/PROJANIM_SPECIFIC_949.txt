@@ -1,0 +1,17 @@
+srcx ushort
+source umediumle
+endheight ushort128
+startheight ushort128
+deltaz sbytec
+angle ubyte
+flags ubyte
+srcz ushortle128
+startdistance ushortle128
+subtiledst umediumx2
+spotanim ushort128
+startdelay ushort128
+subtilesrc umediumx1
+enddelay ushort128
+plane ubytec
+target umedium
+deltax sbytec

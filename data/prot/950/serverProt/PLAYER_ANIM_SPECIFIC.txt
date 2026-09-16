@@ -1,0 +1,5 @@
+anim0 intv1
+anim1 intv1
+anim2 intv1
+anim3 intv1
+delay sbyte128

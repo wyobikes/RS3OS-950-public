@@ -1,0 +1,3 @@
+pos sbytec
+rowId intv1
+table ubyte

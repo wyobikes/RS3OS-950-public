@@ -1,0 +1,6 @@
+height ushortle128
+delay ushortle
+rotation ubytec
+tag int
+spotanim ushortle128
+slot ubyte128

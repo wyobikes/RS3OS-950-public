@@ -1,0 +1,15 @@
+target umediumx1
+endheight sbytec
+srcz ushortle
+deltaz sbytec
+startdelay ushort
+startheight sbytec
+flags ubyte
+startdistance ushortle
+srcx ushortle
+enddelay ushortle128
+angle ubyte
+source umedium
+deltax sbyte128
+spotanim ushort
+plane ubyte

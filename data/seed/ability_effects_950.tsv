@@ -1,0 +1,96 @@
+struct_id	name	style	category	adrenaline_cost_pct	adrenaline_gain_pct	cooldown_ticks	hits	channel_ticks	effects	requires	source	tier
+49531	Basic Attack	melee	auto		9	3	0:110-130			target	Attack (ability)	LOW
+14678	Barge	melee	basic		9	34	1:75-95		bind:11,dash:10	target	Barge	HIGH
+14679	Adaptive Strike	melee	basic		12	9	0:120-140		other:variant_2h_cone_aoe_8,other:variant_dual_2_hits_60-75,other:bloodlust_+1		Adaptive Strike	HIGH
+52781	Rend	melee	basic		9	17	0:135-165		other:bloodlust_+2	target	Rend	HIGH
+14682	Backhand	melee	basic		9	25	1:95-105		stun:3,bind:3,other:bloodlust_+1	target	Backhand	HIGH
+14684	Flurry	melee	threshold	25		34	1:60-70;2:60-70;3:60-70;4:60-70;5:60-70;6:60-70;7:60-70;8:60-70	8	stun:6,bind:6,aoe:1	dual,target	Flurry	HIGH
+14686	Overpower	melee	ultimate	60		50	3:520-570			target	Overpower	HIGH
+14688	Meteor Strike	melee	ultimate	60		100	0:220-250		aoe:1,buff:meteor_strike:50,other:adrenaline_4.5_per_tick_while_melee	target	Meteor Strike	HIGH
+1488	Bladed Dive	melee	basic		9	34	0:75-95		aoe:1,dash:10	dual,target	Bladed Dive	HIGH
+44244	Dismember	melee	threshold			40			bleed:8x2:25-35,heal:4,other:recast_within_40	target	Dismember	HIGH
+14700	Punish	melee	basic		9	40	0:110-130		other:x2.5_below_50pct_lifepoints	target	Punish	HIGH
+14701	Fury	melee	basic		9	25	0:110-130		other:next_melee_crit_chance_+25	target	Fury	HIGH
+14704	Assault	melee	threshold	25		10	1:130-150;3:130-150;5:130-150;7:130-150	7	other:bloodlust_4_hits_170-190	target	Assault	HIGH
+14685	Hurricane	melee	threshold	25		34	0:135-165;0:155-185		aoe:1,other:bloodlust_third_hit_75-95	2h,target	Hurricane	LOW
+14707	Berserk	melee	ultimate	100		100			buff:berserk:33,other:melee_damage_x1.75,other:damage_taken_x1.25	no_target	Berserk	HIGH
+14709	Pulverise	melee	ultimate	60		100	0:300-340		debuff:pulverised:50,other:adrenaline_+50_on_kill	2h,target	Pulverise	HIGH
+46279	Chaos Roar	melee	basic		9	100	0:100-120		buff:chaos_roar:12	target	Chaos Roar	HIGH
+52795	Basic Attack	ranged	auto		9	3	0:90-110			target	Ranged (ability)	LOW
+14663	Piercing Shot	ranged	basic		9	5	0:45-55;0:45-55		other:snipe_cooldown_-4_per_hit	target	Piercing Shot	LOW
+14664	Binding Shot	ranged	basic		9	25	0:65-75		stun:2,bind:16	target	Binding Shot	HIGH
+14666	Snipe	ranged	threshold			100	3:300-360	3		target	Snipe	HIGH
+14668	Ricochet	ranged	basic		9	17	0:75-85;1:15-20;1:15-20		aoe:5,other:extra_hits_only_for_missing_secondary_targets	target	Ricochet	HIGH
+14669	Snap Shot	ranged	threshold	25		3	0:135-155;0:135-155			target	Snap Shot	LOW
+14670	Rapid Fire	ranged	threshold	25		34	1:75-85;2:75-85;3:75-85;4:75-85;5:75-85;6:75-85;7:75-85;8:75-85	8	bind:10,other:searing_winds_+1_per_hit	target	Rapid Fire	HIGH
+52796	Imbue: Shadows	ranged	threshold	40		100			buff:shadow_imbued:50,other:adrenaline_+5_per_ranged_hit	no_target	Imbue: Shadows	HIGH
+14671	Bombardment	ranged	threshold	25		3	0:220-260		aoe:2	target	Bombardment	LOW
+14674	Deadshot	ranged	ultimate	60		50	0:105-125;0:105-125;0:105-125;0:105-125			target	Deadshot	LOW
+19251	Death's Swiftness	ranged	ultimate	100		100			buff:deaths_swiftness:50,other:ranged_damage_x1.5	no_target	Death's Swiftness	HIGH
+52799	Galeshot	ranged	basic		9	34	0:90-110		buff:searing_winds:10,other:ranged_bonus_+20_per_hit	target	Galeshot	HIGH
+28177	Shadow Tendrils	ranged	threshold			75	0:200-240		other:guaranteed_crit,other:self_damage_100-135,other:shadow_imbued_+6	target	Shadow Tendrils	HIGH
+31986	Corruption Shot	ranged	threshold	20		25			bleed:5x2:90-110,other:decay_20pct_of_initial_per_hit,aoe:5	target	Corruption Shot	HIGH
+52777	Basic Attack	magic	auto		9	3	0:90-110			target	Magic (ability)	LOW
+14727	Impact	magic	basic		9	25	0:65-75		stun:3,bind:3	target	Impact	HIGH
+14728	Chain	magic	basic		9	17	0:70-90		aoe:5,buff:chain:10,other:chain_next_single_target_30pct	target	Chain	HIGH
+14729	Combust	magic	basic		9	30			bleed:10x3:27-33	target	Combust	HIGH
+14730	Dragon Breath	magic	basic		9	12	0:110-130		other:cone_4,other:x1.25_vs_combusted	target	Dragon Breath	HIGH
+14731	Asphyxiate	magic	threshold	25		34	1:120-140;3:120-140;5:120-140;7:120-140	7	stun:6,bind:6,buff:channelled_might:6	target	Asphyxiate	HIGH
+14733	Wild Magic	magic	threshold	25		9	0:125-155;0:125-155		other:crit_chance_+10_crit_damage_+20	target	Wild Magic	LOW
+14735	Tsunami	magic	ultimate	100		100	0:225-275		aoe:4,buff:tsunami:50	target	Tsunami	HIGH
+14736	Omnipower	magic	ultimate	60		50	0:420-500			target	Omnipower	HIGH
+19342	Sonic Wave	magic	basic		9	25	2:90-110		buff:flow:15	target	Sonic Wave	HIGH
+19343	Concentrated Blast	magic	basic		9	9	1:30-40;2:30-40;3:30-40	3	other:crit_chance_+5_per_hit_max_15	target	Concentrated Blast	LOW
+19254	Sunshine	magic	ultimate	100		100			dot:16x3:10-20,buff:sunshine:50,other:magic_damage_x1.5_inside_area	target	Sunshine	HIGH
+28180	Smoke Tendrils	magic	threshold			75	0:55-65;2:65-80;4:75-95;6:85-110		other:guaranteed_crit,other:self_damage_35-40_per_hit	target	Smoke Tendrils	HIGH
+31985	Corruption Blast	magic	threshold	20		25			bleed:5x2:90-110,other:decay_20pct_of_initial_per_hit,aoe:2	target	Corruption Blast	HIGH
+45800	Magma Tempest (Targeted)	magic	threshold	20		35	0:35-45;2:35-45;4:35-45;6:35-45;8:35-45;10:35-45;12:35-45;14:35-45		aoe:2,other:tile_targeted,other:cannot_crit	no_target	Magma Tempest (Targeted)	HIGH
+28927	Magma Tempest	magic	threshold	20		35	0:35-45;2:35-45;4:35-45;6:35-45;8:35-45;10:35-45;12:35-45;14:35-45		aoe:2,other:cannot_crit	target	Magma Tempest	HIGH
+48293	Basic Attack	necromancy	auto		9	3	0:90-110			target	Necromancy (ability)	LOW
+48302	Conjure Skeleton Warrior	necromancy	threshold			0	7:22-28;12:22-28;17:22-28;22:22-28;27:22-28;32:22-28;37:22-28;42:22-28;47:22-28;52:22-28;57:22-28;62:22-28;67:22-28;72:22-28		other:summon_skeleton_warrior,other:rage_+3pct_per_hit,other:requires_conduit	no_target	Conjure Skeleton Warrior|Skeleton Warrior/Hit timings	LOW
+48304	Conjure Putrid Zombie	necromancy	threshold			50	7:18-22;13:18-22;19:18-22;25:18-22;31:18-22;37:18-22;43:18-22;49:18-22;55:18-22;61:18-22;67:18-22;73:18-22		dot:23x3:8-12,aoe:1,other:summon_putrid_zombie,other:requires_conduit	no_target	Conjure Putrid Zombie|Putrid Zombie/Hit timings	LOW
+48306	Conjure Vengeful Ghost	necromancy	threshold			0	6:18-22;13:18-22;20:18-22;27:18-22;34:18-22;41:18-22;48:18-22;55:18-22;62:18-22;69:18-22		heal:140,other:summon_vengeful_ghost,other:requires_conduit	no_target	Conjure Vengeful Ghost|Vengeful Ghost/Hit timings	LOW
+31820	Conjure Phantom Guardian	necromancy	threshold			0			buff:phantom_guardian:70,other:damage_taken_-5_core_types,other:requires_conduit	no_target	Conjure Phantom Guardian	LOW
+48296	Touch of Death	necromancy	basic		9	24	0:90-110		other:necrosis_+4	target	Touch of Death	HIGH
+48297	Finger of Death	necromancy	threshold	60		0	0:270-330		other:cost_-10_per_necrosis_consumes_6	target	Finger of Death	HIGH
+48298	Soul Sap	necromancy	basic		9	9	0:90-110		other:residual_soul_+1,other:requires_conduit	target	Soul Sap	HIGH
+48299	Soul Strike	necromancy	threshold			0	0:135-165		stun:5,bind:5,aoe:1,other:splash_90-110_up_to_9	target	Soul Strike	HIGH
+48301	Volley of Souls	necromancy	threshold			0	0:135-165;0:135-165;0:135-165;0:135-165;0:135-165		other:hits_equal_residual_souls_max_5	target	Volley of Souls	LOW
+48308	Bloat	necromancy	threshold	20		0	0:135-165		bleed:10x3:33.75-41.25,other:bloat_25pct_of_initial_per_hit,other:on_death_spreads_4_hits_aoe_1	target	Bloat	HIGH
+48309	Blood Siphon	necromancy	threshold			75	1:22-28;3:22-28;5:22-28;7:22-28;9:117-143	9	heal:70,aoe:2,other:final_hit_adds_total_heal	target	Blood Siphon	LOW
+48311	Spectral Scythe	necromancy	threshold	10		25	0:72-88		other:cone_9,other:residual_soul_25pct,other:recast_within_25	target	Spectral Scythe	HIGH
+48314	Death Skulls	necromancy	ultimate	60		100	0:225-275		other:bounces_4_within_6	target	Death Skulls	HIGH
+48324	Living Death	necromancy	ultimate	100		150			buff:living_death:50,other:resets_touch_of_death_and_death_skulls	no_target	Living Death	HIGH
+48328	Life Transfer	necromancy	threshold			75			other:self_damage_50pct_base_lifepoints,other:extend_conjures_21s		Life Transfer	LOW
+48326	Lesser Bone Shield	necromancy	threshold						other:toggle_bone_shield_25pct_necromancy		Lesser Bone Shield	LOW
+48327	Greater Bone Shield	necromancy	threshold						other:toggle_bone_shield_50pct_necromancy		Greater Bone Shield	LOW
+48329	Threads of Fate	necromancy	threshold			75			buff:threads_of_fate:11,other:single_target_also_hits_4_within_4		Threads of Fate	LOW
+48330	Invoke Death	necromancy	threshold			6			buff:invoke_death:20,other:death_mark_execute_below_20pct		Invoke Death	LOW
+48331	Darkness	necromancy	threshold			3			buff:darkness:1200,other:dodge_20pct		Darkness	LOW
+48332	Split Soul	necromancy	threshold			100			buff:split_soul:34,other:soul_split_heal_x4_as_damage		Split Soul	LOW
+49072	Invoke Lord of Bones	necromancy	threshold						buff:invoke_lord_of_bones:100,other:shattering_bones_armour_stacks		Invoke Lord of Bones	LOW
+14710	Anticipation	defence	basic		9	41			buff:anticipation:17,other:damage_taken_-10,other:stun_immune	no_target	Anticipation	HIGH
+14711	Freedom	defence	basic		9	50			buff:freedom:10,other:clears_stuns_binds_dots	no_target	Freedom	HIGH
+14712	Provoke	defence	basic		9	17			other:taunt	target	Provoke	HIGH
+14713	Resonance	defence	basic		9	50			buff:resonance:10,other:block_next_heal_50-100_by_shield	shield,no_target	Resonance	HIGH
+14714	Preparation	defence	basic		9	34			buff:preparation:16,other:resonance_divert_cooldown_-5_per_hit_taken	shield,no_target	Preparation	HIGH
+14715	Bash	defence	basic		9	25	0:20-100		other:plus_20-100pct_shield_armour_and_defence	shield,target	Bash	LOW
+14716	Reflect	defence	threshold	15		50			buff:reflect:16,other:damage_taken_-50_reflect_100	shield,no_target	Reflect	HIGH
+14717	Debilitate	defence	threshold	15		50	0:20-100		debuff:debilitate:13,other:duration_13-23_by_shield,other:damage_from_target_-50	target	Debilitate	HIGH
+14718	Revenge	defence	threshold	15		75			buff:revenge:32,other:damage_+5_per_stack_max_10	shield,no_target	Revenge	HIGH
+14719	Barricade	defence	ultimate	100		100			buff:barricade:8,other:duration_8-17_by_shield,other:damage_immune	shield,no_target	Barricade	HIGH
+14720	Rejuvenate	defence	ultimate	100		500			buff:rejuvenate:17,other:heal_2.5pct_lifepoints_per_tick	shield,no_target	Rejuvenate	HIGH
+14721	Immortality	defence	ultimate	100		200			buff:immortality:50,other:damage_taken_-25,other:revive_40pct	shield,no_target	Immortality	HIGH
+19252	Natural Instinct	defence	ultimate	100		200			buff:natural_instinct:34,other:leech_target_adrenaline,other:adrenaline_gain_x2	target	Natural Instinct	HIGH
+25028	Devotion	defence	threshold	15		100			buff:devotion:16,other:protection_prayers_100pct	no_target	Devotion	HIGH
+45045	Divert	defence	basic		9	50			buff:divert:10,other:block_next_adrenaline_per_damage_blocked	shield,no_target	Divert	HIGH
+19253	Guthix's Blessing	constitution	ultimate	100		500			buff:guthixs_blessing:15,other:heal_8pct_lifepoints_every_3	no_target	Guthix's Blessing	HIGH
+24188	Sacrifice	constitution	basic		9	50	0:65-75		heal:25,other:heal_100_on_kill	target	Sacrifice	HIGH
+24189	Transfigure	constitution	ultimate	100		300			buff:transfigure:10,other:damage_immune_then_heal_250pct_mitigated	no_target	Transfigure	HIGH
+28179	Ice Asylum	constitution	ultimate	100		500			buff:ice_asylum:36,aoe:7,other:heal_0-7pct_lifepoints_every_6	no_target	Ice Asylum	HIGH
+28429	Siphon	constitution	basic			100			other:steal_adrenaline_10,debuff:siphon_immune:10	target	Siphon (Constitution ability)	HIGH
+31649	Tuska's Wrath	constitution	basic		9	25	0:75-85		other:slayer_task_empowered_x100_slayer_level	target	Tuska's Wrath	HIGH
+31982	Storm Shards	constitution	basic		9	50			other:storm_shard_stack_80-90_max_10	target	Storm Shards	HIGH
+31983	Shatter	constitution	threshold	15		200			other:consumes_storm_shards_deals_stored	target	Shatter	LOW
+31984	Onslaught	constitution	ultimate	100		200	0:100-120;2:118-142;4:136-164;6:154-186;8:172-208;10:190-230;12:208-252;14:226-274;16:244-296;18:262-318;20:280-340;22:298-362;24:316-384;26:334-406;28:352-428;30:370-450;32:388-472;34:406-494;36:424-516;38:442-538;40:460-560;42:478-582;44:496-604;46:514-626;48:532-648;50:550-670	50	other:adrenaline_-25_per_hit,other:self_damage_when_no_adrenaline	target	Onslaught	LOW
+33650	Reprisal	constitution	threshold	15		100			buff:reprisal:10,other:stores_damage_taken_deals_100pct	target	Reprisal	LOW

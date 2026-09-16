@@ -1,0 +1,4 @@
+unk0 int
+unk4 ubyte
+unk5 ushort
+unk7 ubyte

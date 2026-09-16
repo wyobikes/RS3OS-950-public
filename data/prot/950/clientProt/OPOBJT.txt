@@ -1,0 +1,7 @@
+y ushortle128
+selhash int
+selsub ushortle
+flags u128byte
+obj umediumx1
+x ushortle
+selobj umediumx1

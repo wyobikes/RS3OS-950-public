@@ -1,0 +1,6 @@
+sourceslot ushortle
+sourcehash intv1
+sourceobj umedium
+targetslot ushortle
+targethash intv2
+targetobj umedium

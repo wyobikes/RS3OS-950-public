@@ -1,0 +1,12 @@
+coord ubyte
+deltax sbyte
+deltaz sbyte
+target umedium
+spotanim ushort
+startheight sbyte
+endheight sbyte
+startdelay ushort
+enddelay ushort
+angle ubyte
+startdistance ushort
+unread umedium

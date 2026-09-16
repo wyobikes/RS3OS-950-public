@@ -1,0 +1,5 @@
+cornerb int
+enabled ubyte
+cornera int
+hiddenops ubytec
+script int

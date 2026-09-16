@@ -1,0 +1,4 @@
+host string
+port ushort
+port2 ushort
+port3 ushort

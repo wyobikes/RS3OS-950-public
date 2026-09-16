@@ -1,0 +1,365 @@
+struct_id	name	book	book_enum	slot	category	category_raw	level	style	style_raw	adrenaline_tenths	cooldown_ticks	duration_ticks	animation	anim_enum	anim_default	spotanim_2920	spotanim_2933	spotanim_2940	icon	icon2	desc_param	description
+49531	Basic Attack	melee	10147	100	auto	0		melee	1										21235	35555		
+14678	Barge	melee	10147	1	basic	1	65	melee	1	90	34			10052	37394				14208	3101	2795	Run up and ram the target.
+14679	Adaptive Strike	melee	10147	2	basic	1	7	melee	1	120	9			442	37388				21237	35556	2795	Channel your weapons form into an adaptive strike.
+52781	Rend	melee	10147	16	basic	1	18	melee	1	90	17			9816	37416				14211	3104	2795	Slice through the target.
+14682	Backhand	melee	10147	3	basic	1	31	melee	1	90	25			6692	18154				14212	3105	2795	Strike the target with the back of the hand.
+14684	Flurry	melee	10147	4	threshold	2	45	melee	1	-250	34	8		10041	37428				14214	3107	2795	Swing both weapons rapidly around you.
+14686	Overpower	melee	10147	5	ultimate	4	15	melee	1	-600	50			6695	18179				14216	3109	2795	Strike the target with a massive overhead swing.
+14688	Meteor Strike	melee	10147	6	ultimate	4	90	melee	1	-600	100	50		6697	18175				21363	35561	2795	Jump up and strike the ground.
+47129	Dive	melee	10147	7	utility	7	30	movement	8	0	34								23714	24055	2795	Dive forward.
+1488	Bladed Dive	melee	10147	29	basic	1	65	melee	1	90	34								30331	6448	2795	Dash forward striking the enemies around you.
+44244	Dismember	melee	10147	8	threshold	2	50	melee	1	0	40			10145	37412				21239	35558	2795	Slice at the target causing them to <col=ffffff>Bleed</col>.
+14700	Punish	melee	10147	9	basic	1	60	melee	1	90	40			6727	18560				14257	3397	2795	Slash at the target unexpectedly.
+14701	Fury	melee	10147	10	basic	1	21	melee	1	90	25			6724	37425				14258	3398	2795	Swing your weapon at the target with fury.
+14704	Assault	melee	10147	11	threshold	2	3	melee	1	-250	10	8		6725	18577				14261	3401	2795	Strike at the target multiple times.
+14685	Hurricane	melee	10147	12	threshold	2	37	melee	1	-250	34			10057	37437				14215	3108	2795	Spin on the spot with your weapon.
+14707	Berserk	melee	10147	13	ultimate	4	76	melee	1	-1000	100	33							14264	3404	2795	Go berserk, empowering yourself.
+14709	Pulverise	melee	10147	14	ultimate	4	71	melee	1	-600	100	50		6729	18540	3473			14266	3406	2795	Charge up a massive strike and pulverise the target.
+46279	Chaos Roar	melee	10147	15	basic	1	92	melee	1	90	100	12		12157	34957				21238	35557	2795	Release a savage war cry, empowering your next strike.
+52795	Basic Attack	ranged	6738	100	auto	0		ranged	3										23726	35567		
+14663	Piercing Shot	ranged	6738	1	basic	1	13	ranged	3	90	5			10112	37473				23727	35572	2795	Fire two piercing shots.
+14664	Binding Shot	ranged	6738	2	basic	1	31	ranged	3	90	25			6714	18461		3488		14244	3255	2795	Fire a binding shot.
+14665	Escape	ranged	6738	3	utility	7	5	movement	8	0	34								14245	3256	2795	Leap backwards to maintain range.
+14666	Snipe	ranged	6738	4	threshold	2	7	ranged	3	0	100			10140	37498				23729	35574	2795	Fire a precise shot.
+14668	Ricochet	ranged	6738	5	basic	1	67	ranged	3	90	17			10113	37478				23868	35571	2795	Fire a shot which ricochets off the target.
+14669	Snap Shot	ranged	6738	6	threshold	2	2	ranged	3	-250	0			10139	37451				23728	35573	2795	Fire two shots in quick succession.
+14670	Rapid Fire	ranged	6738	7	threshold	2	62	ranged	3	-250	34			10141	37488				14250	3261	2795	Rapidly fire at the target.
+52796	Imbue: Shadows	ranged	6738	19	threshold	2	90	ranged	3	-400	100	50		10144	37519				23761	35569	2795	Imbue your weapon with dark whispers.
+14671	Bombardment	ranged	6738	8	threshold	2	36	ranged	3	-250	0			6719	18506		3525		14251	3262	2795	Fire a volley of shots into the air.
+14674	Deadshot	ranged	6738	9	ultimate	4	21	ranged	3	-600	50			10142	37530				23730	35570	2795	Fire an enchanted shot at the target, striking them multiple times.
+19251	Death's Swiftness	ranged	6738	10	ultimate	4	76	ranged	3	-1000	100	50							20185	20480	2795	Create a shroud of death.
+52799	Galeshot	ranged	6738	11	basic	1	58	ranged	3	90	34	10		10143	37451				23731	35568	2795	Fire an infused shot at the target, empowering yourself with searing winds.
+28177	Shadow Tendrils	ranged	6738	12	threshold	2	75	ranged	3	0	75	17		8806	23631				20914	3306	2795	Shadow tendrils whip at your feet, before striking the target.
+31986	Corruption Shot	ranged	6738	13	threshold	2	70	ranged	3	-200	25			6713	18522		5715	5716	17255	6462	2795	Corrupts the target and nearby enemies, causing them to to take damage over time.
+45801	Quiver ammo slot 1	ranged	6738	17	utility	7	0	ranged	3	0	0								15031	16489	2795	Select the ammo in slot 1 of your quiver.
+45802	Quiver ammo slot 2	ranged	6738	18	utility	7	0	ranged	3	0	0								15032	16490	2795	Select the ammo in slot 2 of your quiver.
+52777	Basic Attack	magic	6740	258	auto	0		magic	4										23399	35562		
+14725	Runic Charge	magic	6740	1	utility	7	26	magic	4	0	50	25		6706	18355		3536		23725	35566	2795	Charge yourself with Anima
+14726	Surge	magic	6740	2	utility	7	5	movement	8	0	34								14233	3216	2795	Teleport forward.
+14727	Impact	magic	6740	3	basic	1	31	magic	4	90	25			10089	37358				14234	3217	2795	Smash the target with a burst of earth energy.
+14728	Chain	magic	6740	4	basic	1	51	magic	4	90	17			10090	37355				15037	15080	2795	A magical spell that chains between nearby targets.
+14729	Combust	magic	6740	5	basic	1	38	magic	4	90	30			10085	37350		8170		23401	35563	2795	Explode the target, causing them to <col=ffffff>Burn</col>.
+14730	Dragon Breath	magic	6740	6	basic	1	19	magic	4	90	12			6735	36640				14236	3219	2795	Breathe a mighty cloud of fire.
+14731	Asphyxiate	magic	6740	7	threshold	2	59	magic	4	-250	34	8		10087	37352				14237	3220	2795	Reach out with magical force and choke the target.
+14733	Wild Magic	magic	6740	9	threshold	2	3	magic	4	-250	9			10091	37366				14239	3222	2795	Fire an unpredictable double magical attack at the target.
+14735	Tsunami	magic	6740	10	ultimate	4	90	magic	4	-1000	100	50		7124	37101		3562		14240	3231	2795	Summon forth a destructive wall of water.
+14736	Omnipower	magic	6740	11	ultimate	4	12	magic	4	-600	50			10092	37360				14242	3233	2795	Bombard the target with each of the four elements.
+14738	Air Strike	magic	6740	14	spell		1	magic	4		4		37251						14348	3436	2795	A simple air spell.
+14739	Confuse	magic	6740	15	spell		1	magic	4		3		18251				104	103	14389	3692	2795	Reduces the target's chance to hit by <col=ffffff>5%</col> for <col=ffffff>1</col> minute.
+14741	Water Strike	magic	6740	16	spell		5	magic	4		4		37261						14349	3437	2795	A simple water spell.
+14742	Lvl-1 Enchant	magic	6740	17	spell		7	magic	4										14382	3470	2795	Imbues sapphire, opal and lapis lazuli jewellery with magical properties.
+14743	Earth Strike	magic	6740	18	spell		9	magic	4		4		37271						14350	3438	2795	A simple earth spell.
+14744	South Feldip Hills Teleport	magic	6740	19	spell		10	magic	4										36136	36178	2795	Teleport yourself to South Feldip Hills.
+14745	Weaken	magic	6740	20	spell		11	magic	4		3		18254				107	106	14390	3693	2795	Reduces the target's damage dealt by <col=ffffff>5%</col> for <col=ffffff>1</col> minute.
+14746	Fire Strike	magic	6740	21	spell		13	magic	4		4		37281						14351	3439	2795	A simple fire spell.
+14747	Bones to Bananas	magic	6740	22	spell		15	magic	4				722			141			14380	3468	2795	Converts all bones, up to big bones, in your backpack into edible bananas.
+14748	Air Bolt	magic	6740	23	spell		17	magic	4		4		37253						14352	3440	2795	A basic air spell.
+14749	Curse	magic	6740	24	spell		19	magic	4		3		18257				110	109	14391	3694	2795	Increases the target's damage received by <col=ffffff>5%</col> for <col=ffffff>1</col> minute.
+14750	Bind	magic	6740	25	spell		20	magic	4		3		18258				181	178	14392	3695	2795	Prevents creatures from moving for <col=ffffff>12</col> seconds, or players for <col=ffffff>6</col> seconds.
+14751	Low Level Alchemy	magic	6740	26	spell		21	magic	4				712			1698	3633		14378	3466	2795	Converts the targeted item into coins.
+14752	Water Bolt	magic	6740	27	spell		23	magic	4		4		37263						14353	3441	2795	A basic water spell.
+14753	Varrock Teleport	magic	6740	28	spell		25	magic	4										36137	36179	2795	Teleport yourself to Varrock.
+14754	Lvl-2 Enchant	magic	6740	29	spell		27	magic	4										14385	3473	2795	Imbues emerald and jade jewellery with magical properties.
+14755	Earth Bolt	magic	6740	30	spell		29	magic	4		4		37273						14354	3442	2795	A basic earth spell.
+14756	Lumbridge Teleport	magic	6740	31	spell		31	magic	4										36135	36177	2795	Teleport yourself to Lumbridge.
+14757	Telekinetic Grab	magic	6740	32	spell		33	magic	4				18300			142	144	143	14332	3413	2795	Magically place the targeted item into your backpack.
+14758	Fire Bolt	magic	6740	33	spell		35	magic	4		4		37283						14355	3443	2795	A basic fire spell.
+14759	Falador Teleport	magic	6740	34	spell		37	magic	4										36132	36175	2795	Teleport yourself to Falador.
+14760	House Teleport	magic	6740	36	spell		40	magic	4										36133	36176	2795	Teleport yourself to your player-owned-house.
+53305	House Teleport	magic	6740	264	spell		1	magic	4										36134	36134	2795	Teleport yourself to your player-owned-house.
+14761	Air Blast	magic	6740	37	spell		41	magic	4		4		37255						14356	3444	2795	A standard air spell.
+14762	Superheat Item	magic	6740	38	spell		43	magic	4				18300			5230			14372	3460	2795	Smelt the targeted ore into a metal bar without using a furnace, or re-heat your unfinished smithing item.<br>If used within the Artisans' Workshop, this works with the smelting gauntlets.
+14763	Camelot Teleport	magic	6740	39	spell		45	magic	4										36130	36173	2795	Teleport yourself to Camelot.
+14764	Water Blast	magic	6740	40	spell		47	magic	4		4		37265						14357	3445	2795	A standard water spell.
+14765	Lvl-3 Enchant	magic	6740	41	spell		49	magic	4										14384	3472	2795	Imbues ruby and topaz jewellery with magical properties.
+14766	Snare	magic	6740	43	spell		50	magic	4		3		18264				180	178	14393	3696	2795	Prevents creatures from moving for <col=ffffff>18</col> seconds, or players for <col=ffffff>9</col> seconds.
+14767	Slayer Dart	magic	6740	44	spell		50	magic	4		4		37291						14388	3476	2795	A powerful air spell, which is particularly effective against certain Slayer creatures.
+14768	Ardougne Teleport	magic	6740	45	spell		51	magic	4										35028	35051	2795	Teleport yourself to Ardougne.
+14769	Earth Blast	magic	6740	46	spell		53	magic	4		4		37275						14358	3446	2795	A standard earth spell.
+14770	High Level Alchemy	magic	6740	47	spell		55	magic	4				713			1698			14379	3467	2795	Converts the targeted item into even more coins!
+14771	Charge Water Orb	magic	6740	48	spell		56	magic	4				18604			149			14374	3462	2795	Converts unpowered orbs in your backpack into water orbs. Must be cast on the water obelisk near Taverley.
+14772	Lvl-4 Enchant	magic	6740	49	spell		57	magic	4										14383	3471	2795	Imbues diamond jewellery with magical properties.
+14773	Watchtower Teleport	magic	6740	50	spell		58	magic	4										35033	35056	2795	Teleport yourself to Yanille.
+14774	Fire Blast	magic	6740	51	spell		59	magic	4		4		37285						14359	3447	2795	A standard fire spell.
+14775	Charge Earth Orb	magic	6740	52	spell		60	magic	4				18605			151			14375	3463	2795	Converts unpowered orbs in your backpack into earth orbs. Must be cast on the earth obelisk near Edgeville.
+14776	Bones to Peaches	magic	6740	53	spell		60	magic	4				722			141			14381	3469	2795	Converts all bones, up to big bones, in your backpack into edible peaches.
+14777	Divine Storm	magic	6740	54	spell		60	magic	4		4		37293						35026	35049	2795	A powerful air spell.
+14778	Trollheim Teleport	magic	6740	57	spell		61	magic	4										35032	35055	2795	Teleport yourself to the summit of Trollheim.
+28493	God Wars Dungeon Teleport	magic	6740	170	spell		61	magic	4										35029	35052	2795	Teleport yourself to the God Wars Dungeon.
+14779	Air Wave	magic	6740	58	spell		62	magic	4		4		37257						14360	3448	2795	A powerful air spell.
+14780	Charge Fire Orb	magic	6740	59	spell		63	magic	4				18606			152			14376	3464	2795	Converts unpowered orbs in your backpack into fire orbs. Must be cast on the fire obelisk near Taverley.
+14781	Ape Atoll Teleport	magic	6740	60	spell		64	magic	4										35027	35050	2795	Teleport yourself to Ape Atoll.
+14782	Water Wave	magic	6740	61	spell		65	magic	4		4		37267						14361	3449	2795	A powerful water spell.
+14783	Charge Air Orb	magic	6740	62	spell		66	magic	4				18607			150			14373	3461	2795	Converts unpowered orbs in your backpack into air orbs. Must be cast on the air obelisk near Edgeville.
+14784	Vulnerability	magic	6740	63	spell		66	magic	4		3		18271				89	168	14395	3698	2795	Increases the target's damage received by <col=ffffff>10%</col> for <col=ffffff>1</col> minute.
+14785	Lvl-5 Enchant	magic	6740	64	spell		68	magic	4										14386	3474	2795	Imbues dragonstone and moonstone jewellery with magical properties.
+14786	Earth Wave	magic	6740	65	spell		70	magic	4		4		37277						14362	3450	2795	A powerful earth spell.
+14787	Enfeeble	magic	6740	66	spell		73	magic	4		3		18273				172	171	14371	3459	2795	Reduces the target's damage dealt by <col=ffffff>10%</col> for <col=ffffff>1</col> minute.
+14788	Tele-other Lumbridge	magic	6740	67	spell		74	magic	4										36140	36182	2795	Teleport the targeted player to Lumbridge.
+14789	Fire Wave	magic	6740	68	spell		75	magic	4		4		37287						14363	3451	2795	A powerful fire spell.
+14790	Storm of Armadyl	magic	6740	69	spell		77	magic	4		4		37295						35025	35048	2795	A very powerful air spell.
+14791	Entangle	magic	6740	70	spell		79	magic	4		3		18276				179	178	14394	3697	2795	Prevents creatures from moving for <col=ffffff>24</col> seconds, or players for <col=ffffff>12</col> seconds.
+14792	Stagger	magic	6740	71	spell		80	magic	4		3		18277				80	174	14377	3465	2795	Reduces the target's chance to hit by <col=ffffff>10%</col> for <col=ffffff>1</col> minute.
+14793	Air Surge	magic	6740	73	spell		81	magic	4		4		37259						14364	3452	2795	A very powerful air spell.
+14794	Tele-other Falador	magic	6740	74	spell		82	magic	4										36139	36181	2795	Teleport the targeted player to Falador.
+14795	Teleport Block	magic	6740	75	spell		85	magic	4		3		10503				1843	1842	14344	3432	2795	Prevent the targeted player from using teleport spells and items for <col=ffffff>5</col> minutes.
+14798	Earth Surge	magic	6740	76	spell		90	magic	4		4		37279						14366	3454	2795	A very powerful earth spell.
+14797	Lvl-6 Enchant	magic	6740	77	spell		87	magic	4										14387	3475	2795	Imbues onyx, alchemical onyx, hydrix and alchemical hydrix jewellery with magical properties.
+14796	Water Surge	magic	6740	78	spell		85	magic	4		4		37269						14365	3453	2795	A very powerful water spell.
+14799	Tele-other Camelot	magic	6740	79	spell		90	magic	4										36138	36180	2795	Teleport the targeted player to Camelot.
+14800	Fire Surge	magic	6740	80	spell		95	magic	4		4		37289						14367	3455	2795	A very powerful fire spell.
+14801	Smoke Rush	magic	6740	81	spell		50	magic	4		4		37302						25915	6840	2795	A powerful air spell.
+14802	Shadow Rush	magic	6740	82	spell		52	magic	4		4		37310						25919	6844	2795	A powerful earth spell.
+14803	Paddewwa Teleport	magic	6740	83	spell		54	magic	4										36128	36171	2795	Teleport yourself to the ancient city of Paddewwa (Edgeville).
+14804	Blood Rush	magic	6740	84	spell		56	magic	4		4		37318						25927	6852	2795	A powerful fire spell.
+14805	Ice Rush	magic	6740	85	spell		58	magic	4		4		37326						25923	6848	2795	A powerful water spell.
+14806	Senntisten Teleport	magic	6740	86	spell		60	magic	4										36129	36172	2795	Teleport yourself to the ancient city of Senntisten (Varrock Dig Site).
+14807	Smoke Burst	magic	6740	87	spell		62	magic	4		4		37304						25916	6841	2795	A powerful area air spell.
+14808	Shadow Burst	magic	6740	88	spell		64	magic	4		4		37312						25920	6845	2795	A powerful area earth spell.
+14809	Kharyrll Teleport	magic	6740	89	spell		66	magic	4										36126	36169	2795	Teleport yourself to the ancient city of Kharyrll (Canifis).
+14810	Blood Burst	magic	6740	90	spell		68	magic	4		4		37320						25928	6853	2795	A powerful area fire spell.
+14811	Ice Burst	magic	6740	91	spell		70	magic	4		4		37328						25924	6849	2795	A powerful area water spell.
+14812	Lassar Teleport	magic	6740	92	spell		72	magic	4										36127	36170	2795	Teleport yourself to the ancient city of Lassar (Ice Mountain).
+14813	Smoke Blitz	magic	6740	93	spell		74	magic	4		4		37306						25917	6842	2795	A very powerful air spell.
+14814	Shadow Blitz	magic	6740	94	spell		76	magic	4		4		37314						25921	6846	2795	A very powerful earth spell.
+14815	Dareeyak Teleport	magic	6740	95	spell		78	magic	4										36124	36167	2795	Teleport yourself to the ancient city of Dareeyak (Western Wilderness).
+14816	Blood Blitz	magic	6740	96	spell		80	magic	4		4		37322						25929	6854	2795	A very powerful fire spell.
+14817	Ice Blitz	magic	6740	97	spell		82	magic	4		4		37330						25925	6850	2795	A very powerful water spell.
+14818	Carrallangar Teleport	magic	6740	98	spell		84	magic	4										36123	36166	2795	Teleport yourself to the ancient city of Carrallangar (Graveyard of Shadows).
+14819	Smoke Barrage	magic	6740	99	spell		86	magic	4		4		37308						25918	6843	2795	A very powerful area air spell.
+14820	Shadow Barrage	magic	6740	100	spell		88	magic	4		4		37316						25922	6847	2795	A very powerful area earth spell.
+14821	Annakarl Teleport	magic	6740	101	spell		90	magic	4										36122	36165	2795	Teleport yourself to the ancient city of Annakarl (Demonic Ruins).
+14822	Blood Barrage	magic	6740	102	spell		92	magic	4		4		37324						25930	6855	2795	A very powerful area fire spell.
+14823	Ice Barrage	magic	6740	103	spell		94	magic	4		4		37332						25926	6851	2795	A very powerful area water spell.
+14824	Ghorrock Teleport	magic	6740	104	spell		96	magic	4										36125	36168	2795	Teleport yourself to the ancient city of Ghorrock (Ice Plateau).
+14825	Bake Pie	magic	6740	105	spell		65	magic	4										14402	6043	2795	Bakes all uncooked pies in your backpack.
+14826	Cure Plant	magic	6740	106	spell		66	magic	4										14426	6102	2795	Cure the targeted farming patch of disease.
+14827	Monster Examine	magic	6740	107	spell		66	magic	4										12512	16385	2795	See details about the targeted creature, such as its maximum hit.
+14828	NPC Contact	magic	6740	108	spell		67	magic	4										14427	6103	2795	Telepathically speak with a selection of useful NPCs.
+14829	Cure Other	magic	6740	109	spell		68	magic	4										14418	6070	2795	Cure the targeted player of poison.
+14830	Humidify	magic	6740	110	spell		68	magic	4										14437	6117	2795	Fills all containers in your backpack with water.
+14831	Moonclan Teleport	magic	6740	111	spell		69	magic	4										14403	6044	2795	Teleport yourself to Lunar Isle.
+14832	Tele-group Moonclan	magic	6740	112	spell		70	magic	4										14428	6104	2795	Teleport yourself and all nearby players to Lunar Isle.
+14833	Ourania Teleport	magic	6740	113	spell		71	magic	4										14442	6122	2795	Teleport yourself to the Ourania Cave (ZMI Altar).
+14834	Cure Me	magic	6740	114	spell		71	magic	4										14421	6082	2795	Cure yourself of poison.
+14835	Hunter Kit	magic	6740	115	spell		71	magic	4										14438	6118	2795	Conjure a selection of useful Hunter equipment.
+14836	South Falador Teleport	magic	6740	116	spell		72	magic	4										14444	6124	2795	Teleport yourself to the farming patch south of Falador.
+14837	Waterbirth Teleport	magic	6740	117	spell		72	magic	4										14404	6045	2795	Teleport yourself to Waterbirth Island.
+14838	Tele-group Waterbirth	magic	6740	118	spell		73	magic	4										14429	6105	2795	Teleport yourself and all nearby players to Waterbirth Island.
+14839	Cure Group	magic	6740	119	spell		74	magic	4										14424	6100	2795	Cure yourself and all nearby players of poison.
+14840	Repair Rune Pouch	magic	6740	120	spell		75	magic	4										14445	6125	2795	Repairs and strengthens the targeted Rune Pouch.
+14841	Barbarian Teleport	magic	6740	121	spell		75	magic	4										14406	6047	2795	Teleport yourself to the Barbarian Outpost.
+14842	Stat Spy	magic	6740	122	spell		75	magic	4										14435	6115	2795	See details about the targeted player, such as their skill levels.
+14843	North Ardougne Teleport	magic	6740	123	spell		76	magic	4										14446	6126	2795	Teleport yourself to the farming patch on Manor Farm.
+14844	Tele-group Barbarian	magic	6740	124	spell		76	magic	4										14430	6106	2795	Teleport yourself and all nearby players to the Barbarian Outpost.
+14845	Superglass Make	magic	6740	125	spell		77	magic	4										14407	6048	2795	Create molten glass, robust glass and crystal glass from the resources in your backpack without the use of a furnace or robust glass machine.<br>Creating molten glass has the chance to create an additional piece.
+14846	Remote Farm	magic	6740	126	spell		78	magic	4										14447	6128	2795	View the status of any farming patch. Also allows any farming patch to be cured of disease. Fertile Soil can be cast on any appropriate patch using this spell.
+14847	Khazard Teleport	magic	6740	127	spell		78	magic	4										14408	6049	2795	Teleport yourself to Port Khazard.
+14848	Tele-group Khazard	magic	6740	128	spell		79	magic	4										14431	6107	2795	Teleport yourself and all nearby players to Port Khazard.
+14849	Dream	magic	6740	129	spell		79	magic	4										14439	6119	2795	Enter a dream-like state, causing your life points to regenerate at ten times their normal rate.
+44699	Spiritual Healing	magic	6740	130	spell		80	magic	4										14449	6130	2795	Heal your familiar, boost its combat stats and extends its lifetime by 20% of its starting value. Can only be used once per familiar, and once every two minutes.
+14851	String Jewellery	magic	6740	131	spell		80	magic	4										12517	16386	2795	Magically string all unstrung amulets in your backpack.
+44700	Potion Share	magic	6740	132	spell		81	magic	4										14413	6054	2795	Shares the targeted, tradeable, standard potion between you and all players adjacent to you. Uses one dose per player, excluding you. Will not work on potions with a negative effect.
+14853	Magic Imbue	magic	6740	133	spell		82	magic	4										14411	6052	2795	Allow the creation of combination runes without the need for an opposing talisman.
+14854	Make Leather	magic	6740	134	spell		83	magic	4										14448	6129	2795	Magically tans all hides of a targeted type in your backpack.
+14855	Fertile Soil	magic	6740	135	spell		83	magic	4										14412	6053	2795	Magically treat the targeted farming patch with supercompost.
+44701	Telekinetic Grind	magic	6740	211	spell		85	magic	4										14460	6158	2795	Grinds down up to 60 of targeted item in your backpack that can be ground by a pestle and mortar. Divides items by teleporting their constituent parts a tiny distance away from each other.
+14857	Fishing Guild Teleport	magic	6740	137	spell		85	magic	4										14414	6055	2795	Teleport to the Fishing Guild.
+14858	Tele-group Fishing Guild	magic	6740	138	spell		86	magic	4										14432	6108	2795	Teleport yourself and all nearby players to the Fishing Guild.
+14859	Plank Make	magic	6740	139	spell		86	magic	4										14440	6120	2795	Convert the targeted log into a plank.
+14860	Catherby Teleport	magic	6740	140	spell		87	magic	4										14415	6056	2795	Teleport yourself to the allotment patches at Catherby.
+14861	Tune Bane	magic	6740	141	spell		87	magic	4										14452	6150	2795	Tunes bane arrows and bane bolts to be more effective against certain creatures.<br>Can be cast on Jas arrows to tune them to a different creature.
+14862	Tele-group Catherby	magic	6740	142	spell		88	magic	4										14433	6109	2795	Teleport yourself and all nearby players to Catherby.
+14863	Ice Plateau Teleport	magic	6740	143	spell		89	magic	4										14416	6057	2795	Teleport yourself to Ice Plateau.
+14864	Tele-group Ice Plateau	magic	6740	144	spell		90	magic	4										14434	6110	2795	Teleport yourself and all nearby players to Ice Plateau.
+14865	Disruption Shield	magic	6740	145	spell		90	magic	4		100								14450	6148	2795	The next hit you receive from another player or NPC is negated.
+14866	Heal Other	magic	6740	147	spell		92	magic	4										14419	6080	2795	Consume <col=ffffff>75%</col> of your current life points to heal the targeted player.
+14867	Trollheim Farm Teleport	magic	6740	148	spell		92	magic	4										14453	6151	2795	Teleport yourself to the Trollheim farming patch.
+14868	Tele-group Trollheim Farm	magic	6740	149	spell		92	magic	4										14454	6152	2795	Teleport yourself and all nearby players to the Trollheim farming patch.
+14869	Vengeance Other	magic	6740	150	spell		93	magic	4		50		4411				725		14420	6081	2795	The next time the targeted player receives damage, <col=ffffff>75%</col> of the damage received is instead dealt to the attacker.
+14870	Vengeance	magic	6740	151	spell		94	magic	4		50		4410			726			14423	6099	2795	The next time you receive damage, <col=ffffff>75%</col> of the damage received is instead dealt to the attacker.
+14871	Vengeance Group	magic	6740	152	spell		95	magic	4		50		4411				725		14451	6149	2795	The next time any nearby player receives damage, <col=ffffff>75%</col> of the damage received is instead dealt to the attacker.
+14872	Heal Group	magic	6740	153	spell		95	magic	4										14425	6101	2795	Consume <col=ffffff>75%</col> of your current lifepoints to heal all nearby players.
+14873	Spellbook Swap	magic	6740	154	spell		96	magic	4										35016	35045	2795	Allows you to cast a single spell from the Standard or Ancient spellbooks.
+6845	Spellbook Swap (Standard)	magic	6740	197	spell		96	magic	4										35018	35047	2795	Allows you to cast a single spell from the Standard spellbook.
+6846	Spellbook Swap (Ancient)	magic	6740	198	spell		96	magic	4										35017	35046	2795	Allows you to cast a single spell from the Ancient spellbook.
+44702	Trap Telekinesis	magic	6740	208	spell		97	magic	4										14462	6160	2795	Collects trapped animals and resets traps. Works on box, clockwork box, electrified, tortle and marasamaw traps.
+14875	Home Teleport	magic	6740	155	spell		0	magic	4										36131	36174	2795	Teleport to the city hub of your choice.
+7120	Max guild Teleport	magic	6740	199	spell		0	magic	4										36145	36184	2795	Teleport to the Max guild.
+7121	Skeletal horror Teleport	magic	6740	200	spell		0	magic	4										36142	36185	2795	Teleport to the Skeletal horror.
+7122	Kandarin monastery Teleport	magic	6740	201	spell		0	magic	4										36143	36187	2795	Teleport to the Kandarin monastery.
+7123	Manor farm Teleport	magic	6740	202	spell		0	magic	4										36144	36186	2795	Teleport to the Manor farm.
+11659	War's Retreat Teleport	magic	6740	205	spell		0	magic	4										35042	36188	2795	Teleport to War's Retreat.
+49251	Christmas Village Teleport	magic	6740	246	spell		0	magic	4										31180	31181	2795	Teleport to the Christmas Village in the Land of Snow.
+49603	Blooming Burrow Teleport	magic	6740	247	spell		0	magic	4										33606	33669	2795	Teleport to the Blooming Burrow in the Land of Glades.
+50569	Harvest Hollow Teleport	magic	6740	248	spell		0	magic	4										34363	34420	2795	Teleport to the Harvest Hollow in the Land of Harvest.
+14740	Enchant Crossbow Bolt	magic	6740	156	spell		4	magic	4				4463						14370	3458	2795	Enchant crossbow bolts to have additional magical effects when they are fired.
+14874	Borrowed Power	magic	6740	157	spell		99	magic	4										12509	16376	2795	After setting Borrowed Power to a spell, allows you to cast that spell up to 1,000 times.
+14876	Dungeon Home Teleport	magic	6740	158	spell		0	magic	4										36131	36174	2795	Teleport to the starting room of the dungeon.
+14877	Create Gatestone	magic	6740	159	spell		32	magic	4										14507	6876	2795	Create a magical gatestone, which you can teleport to when placed on the floor.
+14878	Gatestone Teleport	magic	6740	160	spell		32	magic	4										14508	6877	2795	Teleport to the location of your gatestone.
+14879	Group Gatestone Teleport	magic	6740	161	spell		42	magic	4										14509	6878	2795	Teleport to the location of your group gatestone or party leader.
+14880	Polypore Strike	magic	6740	162	spell		80	magic	4		4		18290				2036	2035	14396	3699	2795	A very powerful air spell.
+19342	Sonic Wave	magic	6740	165	basic	1	6	magic	4	90	25			7122	36651				27430	27431	2795	A focused blast of magic that pummels the target.
+19343	Concentrated Blast	magic	6740	166	basic	1	66	magic	4	90	9	6		10104	37340				13309	15183	2795	Blast the target with beams of concentrated energy.
+19254	Sunshine	magic	6740	164	ultimate	4	76	magic	4	-1000	100	50		6712	18364				20183	20454	2795	Summon a sunbeam to shine over your location.
+20279	Create Gatestone 2	magic	6740	167	spell		90	magic	4										20614	6873	2795	Create a magical gatestone 2, which you can teleport to when placed on the floor.
+20280	Gatestone 2 Teleport	magic	6740	168	spell		90	magic	4										20615	6874	2795	Teleport to the location of your gatestone 2.
+28180	Smoke Tendrils	magic	6740	169	threshold	2	75	magic	4	0	75	8		8805	23641	4665	4663		17501	3251	2795	Tendrils of smoke whip at the target's feet.
+31985	Corruption Blast	magic	6740	172	threshold	2	70	magic	4	-200	25			7914	23958				19226	6455	2795	Blasts the target with corruption, causing them to take damage over time.
+32244	Opal Aurora	magic	6740	173	spell		75	magic	4		4		18250				5781	5777	25935	6860	2795	A simple air spell. On hit will find all prisms within a <col=FFFFFF>3</col> square radius of the player and increase their duration by a small amount.
+32245	Sapphire Aurora	magic	6740	174	spell		77	magic	4		4		18252				5783	5779	25934	6859	2795	A simple water spell. On hit has a chance to find all prisms within a <col=FFFFFF>3</col> square radius of the player and give a small buff to their ability when they next activate.
+32246	Emerald Aurora	magic	6740	175	spell		79	magic	4		4		18253				5780	5776	25933	6858	2795	A simple earth spell. On hit will give the caster a small Damage Reduction buff. By <col=FFFFFF>1%</col> per stack, up to <col=FFFFFF>5</col> stacks.
+32247	Ruby Aurora	magic	6740	176	spell		81	magic	4		4		18255				5782	5778	25936	6861	2795	A simple fire spell. On hit has a chance to increase damage output, by <col=FFFFFF>1%</col> per stack up to <col=FFFFFF>3</col> stacks, to all other players within a <col=FFFFFF>5</col> tile radius from the caster.
+32250	Prism of Restoration	magic	6740	177	spell		76	magic	4										25940	6865	2795	A prism which will periodically heal your familiar, recharge your familiars' special attack by <col=FFFFFF>1</col> per cycle and restore summoning points by up to <col=FFFFFF>10</col> per cycle, based on distance from the prism. While within range you will also have a chance at saving a scroll when used. Players must be within <col=FFFFFF>7</col> tiles to gain the effect.
+32251	Prism of Salvation	magic	6740	180	spell		80	magic	4										25942	6867	2795	A prism which when clicked will allow any player to teleport to it. Must be within <col=FFFFFF>8</col> tiles to use.
+32252	Prism of Loyalty	magic	6740	179	spell		82	magic	4										25941	6866	2795	A prism which allows players to store their lifepoints in. Any player that comes within <col=FFFFFF>5</col> tiles of the prism, with less than <col=FFFFFF>25%</col> health will transfer the prism's health to the player, healing them up to the maximum lifepoints this prism is holding.
+32253	Shield Dome	magic	6740	186	spell		84	magic	4										25931	6856	2795	Create an energy shield for <col=FFFFFF>15</col> seconds that will protect all players within it, reducing damage by up to <col=FFFFFF>50%</col>. Each different shield following this will have diminishing returns that reset after 2 minutes.
+32258	Intercept	magic	6740	187	spell		77	magic	4										25932	6857	2795	Place a ward on an ally for <col=FFFFFF>10</col> seconds, you will take all damage they would receive with a <col=FFFFFF>5%</col> reduction in damage.
+32256	Crystallise	magic	6740	181	spell		88	magic	4										25939	6864	2795	Targeting trees, mining locations and fishing spots will crystallise them, causing them to yield increased XP but no resources. Target empty box traps to automatically catch and release creatures, yielding no resources. This effect will last for <col=FFFFFF>30</col> seconds.
+32254	Prism of Dowsing	magic	6740	183	spell		86	magic	4										25937	6862	2795	A prism which will draw wisps to it. While harvesting from the wisps within <col=FFFFFF>4</col> tiles of the prism the player will have a 10% better chance to obtain enriched memories.
+32259	Rapid Growth	magic	6740	184	spell		88	magic	4										25946	6871	2795	Target herb, tree or fruit tree farming patch grows one step. Can only be cast on the same patch once per day.
+32257	Crystal Mask	magic	6740	182	spell		90	magic	4										25938	6863	2795	Create a mask that increases your success chance when pickpocketing and clears any current pickpocketing threat. This effect will last for <col=FFFFFF>5</col> minutes.<br>Crystal mask will protect the wearer once from Croesus's fungus attacks.
+32261	Spellbook Swap	magic	6740	185	spell		96	magic	4										35016	35045	2795	Allows you to cast a single spell from the Standard or Lunar spellbooks.
+6847	Spellbook Swap (Standard)	magic	6740	195	spell		96	magic	4										35018	35047	2795	Allows you to cast a single spell from the Standard spellbook.
+6848	Spellbook Swap (Lunar)	magic	6740	196	spell		96	magic	4										35014	35044	2795	Allows you to cast a single spell from the Lunar spellbook.
+32942	Analyse	magic	6740	188	spell		1	style27	27				27997			6022			12508	16340	2795	Analyse the targeted item to determine the Invention materials it could yield if disassembled.
+32943	Disassemble	magic	6740	189	spell		1	style27	27				27997			6022			12510	16377	2795	Disassemble the targeted item into Invention materials.
+37901	Mazcab Teleport	magic	6740	191	spell		70	magic	4										35030	35053	2795	Teleport yourself to Mazcab.
+39785	Spin Flax	magic	6740	194	spell		81	magic	4										14456	6154	2795	Magically spin <col=ffffff>5</col> pieces of flax in your backpack.
+31921	Anachronia Teleport	magic	6740	203	spell		72	magic	4										10371	34823	2795	Teleport yourself to your Anachronia teleport totem.
+37220	Golden Touch	magic	6740	204	utility	7	55	magic	4	0	200	100							1520		2795	Feel the magic of gold at your fingertips.<br>- High-alchemises all drops not exceeding the lootbeam value.<br>- <col=ffffff>60s</col> duration.
+43909	Fixate	magic	6740	206	spell		1	style28	28										12511	16384	2795	Fixate on an artefact from the targeted excavation to guarantee it on your next discovery.
+11762	Taverley Teleport	magic	6740	207	spell		19	magic	4										35031	35054	2795	Teleport yourself to Taverley.
+44703	Fire Urn	magic	6740	209	spell		82	magic	4										14461	6159	2795	Fires decorated, exquisite and infernal urns.
+44704	Sift Soil	magic	6740	210	spell		91	magic	4										14463	6161	2795	Magically sifts the targeted soil from your backpack and soil box.
+44912	Smoke Cloud	magic	6740	212	spell		74	magic	4		3		23982				7478		14771	14987	2795	Disorient the target with a veil of smoke, leaving them vulnerable.<br>- Increases the <col=ffffff>Critical Strike Damage</col> of attacks against the target by <col=ffffff>+15%</col>.<br>- <col=ffffff>2m</col> duration.<br>- <col=ffffff>40%</col> effective for non-magic attacks.
+44946	Animate Dead	magic	6740	213	spell		84	magic	4			1200							14768	14984		
+44947	Exsanguinate	magic	6740	215	spell		96	magic	4		4		37334						14769	14985	2795	An extremely powerful fire spell.
+44950	Incite Fear	magic	6740	214	spell		98	magic	4		4		37336						14770	14986	2795	An extremely powerful water spell.
+45800	Magma Tempest (Targeted)	magic	6740	216	threshold	2	85	magic	4	-200	35			10110	34546				15033	16488	2795	Create a storm of fire and earth at targeted location.
+28927	Magma Tempest	magic	6740	217	threshold	2	85	magic	4	-200	35			10110	34546				4378	9387	2795	Create a storm of fire and earth around the target.
+11753	Al Kharid Lodestone	magic	6740	218	spell		0	magic	4										31871	31871	2795	Teleport to the Al Kharid lodestone.
+24324	Anachronia Lodestone	magic	6740	219	spell		0	magic	4										31886	31886	2795	Teleport to the Anachronia lodestone.
+11780	Ardougne Lodestone	magic	6740	220	spell		0	magic	4										31862	31862	2795	Teleport to the Ardougne lodestone.
+24320	Ashdale Lodestone	magic	6740	221	spell		0	magic	4										31881	31881	2795	Teleport to the Ashdale lodestone.
+24310	Bandit Camp Lodestone	magic	6740	222	spell		0	magic	4										31872	31872	2795	Teleport to the Bandit Camp lodestone.
+4374	Burthorpe Lodestone	magic	6740	223	spell		0	magic	4										31864	31864	2795	Teleport to the Burthorpe lodestone.
+24311	Canifis Lodestone	magic	6740	224	spell		0	magic	4										31874	31874	2795	Teleport to the Canifis lodestone.
+14967	Catherby Lodestone	magic	6740	225	spell		0	magic	4										31865	31865	2795	Teleport to the Catherby lodestone.
+48292	City of Um Lodestone	magic	6740	226	spell		0	magic	4										30939	32358	2795	Teleport to the City of Um lodestone.
+24202	Draynor Lodestone	magic	6740	227	spell		0	magic	4										31868	31868	2795	Teleport to the Draynor Village lodestone.
+24312	Eagles' Peak Lodestone	magic	6740	228	spell		0	magic	4										31875	31875	2795	Teleport to the Eagles' Peak lodestone.
+24225	Edgeville Lodestone	magic	6740	229	spell		0	magic	4										31870	31870	2795	Teleport to the Edgeville lodestone.
+24274	Falador Lodestone	magic	6740	230	spell		0	magic	4										31861	31861	2795	Teleport to the Falador lodestone.
+39862	Fort Forinthry Lodestone	magic	6740	231	spell		0	magic	4										12692	27141	2795	Teleport to the Fort Forinthry lodestone.
+24313	Fremennik Lodestone	magic	6740	232	spell		0	magic	4										31877	31877	2795	Teleport to the Fremennik Province lodestone.
+24314	Karamja Lodestone	magic	6740	233	spell		0	magic	4										31878	31878	2795	Teleport to the Karamja lodestone.
+24278	Lumbridge Lodestone	magic	6740	234	spell		0	magic	4										31859	31859	2795	Teleport to the Lumbridge lodestone.
+24309	Lunar Isle Lodestone	magic	6740	235	spell		0	magic	4										31873	31873	2795	Teleport to the Lunar Isle lodestone.
+24323	Menaphos Lodestone	magic	6740	236	spell		0	magic	4										31885	31885	2795	Teleport to the Menaphos lodestone.
+24315	Oo'glog Lodestone	magic	6740	237	spell		0	magic	4										31876	31876	2795	Teleport to the Oo'glog lodestone.
+24298	Port Sarim Lodestone	magic	6740	238	spell		0	magic	4										31867	31867	2795	Teleport to the Port Sarim lodestone.
+24321	Prifddinas Lodestone	magic	6740	239	spell		0	magic	4										31882	31882	2795	Teleport to the Prifddinas lodestone.
+24299	Seers' Village Lodestone	magic	6740	240	spell		0	magic	4										31866	31866	2795	Teleport to the Seers' Village lodestone.
+24300	Taverley Lodestone	magic	6740	241	spell		0	magic	4										31863	31863	2795	Teleport to the Taverley lodestone.
+24316	Tirannwn Lodestone	magic	6740	242	spell		0	magic	4										31879	31879	2795	Teleport to the Tirannwn lodestone.
+24302	Varrock Lodestone	magic	6740	243	spell		0	magic	4										31860	31860	2795	Teleport to the Varrock lodestone.
+24317	Wilderness Lodestone	magic	6740	244	spell		0	magic	4										31880	31880	2795	Teleport to the Wilderness Crater lodestone.
+24308	Yanille Lodestone	magic	6740	245	spell		0	magic	4										31869	31869	2795	Teleport to the Yanille lodestone.
+51271	Temporal Anomaly	magic	6740	249	spell		97	magic	4			1200							10367	34820	2795	Create a temporal anomaly.
+51273	Crumble Undead	magic	6740	250	spell		78	magic	4		4		37297						1782	34819	2795	A very powerful spell against undead enemies.
+51274	Western Kharazi Jungle Teleport	magic	6740	251	spell		81	magic	4										1779	34817	2795	Teleport yourself to the western side of the Kharazi Jungle.
+51275	Mountain Camp Teleport	magic	6740	252	spell		83	magic	4										1780	34818	2795	Teleport yourself to the Mountain Camp near the Troll Stronghold.
+51276	North-western Anachronia Teleport	magic	6740	253	spell		75	magic	4										10370	34824	2795	Teleport yourself to the north-western side of Anachronia.
+51277	Eastern Anachronia Teleport	magic	6740	254	spell		78	magic	4										10369	34822	2795	Teleport yourself to the eastern side of Anachronia.
+51278	Northern Lost Grove Teleport	magic	6740	255	spell		85	magic	4										11316	34825	2795	Teleport yourself to the northern side of the Lost Grove.
+51279	Paradox	magic	6740	256	spell		88	magic	4			1200							1408	34816	2795	Allows you to gather Fishing, Mining, Woodcutting and Hunter resources at two different points in time. This yields additional resources and reduces your XP by <col=FFFFFF>60%</col>. Additionally, you also deal <col=FFFFFF>+25%</col> damage to mining locations. The effect will last for <col=FFFFFF>60</col> seconds.
+51280	Advance Time	magic	6740	257	spell		93	magic	4										10368	34821	2795	Advance time in a place of your choice. Can be cast <col=FFFFFF>3</col> times a week.
+53005	Wendlewick Lodestone	magic	6740	259	spell		0	magic	4										35667	35689	2795	Teleport to the Wendlewick lodestone.
+53006	Wendlewick Teleport	magic	6740	260	spell		28	magic	4										35665	35688	2795	Teleport yourself to the centre of Wendlewick.
+53079	Vampyrism	magic	6740	261	spell		69	magic	4			1200							35770	35777	2795	Drain life from your foes to heal yourself.
+53080	Penance	magic	6740	262	spell		67	magic	4			1200							35771	35778	2795	Restore prayer points from damage taken.
+53222	Sunlight Sands Teleport	magic	6740	263	spell		0	magic	4										36102	36107	2795	Teleport to the Sunlight Sands Beach.
+48293	Basic Attack	necromancy	16973	1	auto	0		necromancy	29										30015	31972		
+48302	Conjure Skeleton Warrior	necromancy	16973	4	threshold	2	2	necromancy	29			70	35502			7899			34169	34185	2795	Conjure a <col=ffffff>Skeleton Warrior</col> from the Underworld.
+48304	Conjure Putrid Zombie	necromancy	16973	8	threshold	2	40	necromancy	29		50	70	35502			7899			34173	34187	2795	Conjure a <col=ffffff>Putrid Zombie</col> from the Underworld.
+48306	Conjure Vengeful Ghost	necromancy	16973	9	threshold	2	40	necromancy	29			70	35502			7899			34171	34186	2795	Conjure a <col=ffffff>Vengeful Ghost</col> from the Underworld.
+31820	Conjure Phantom Guardian	necromancy	16973	16	threshold	2	70	necromancy	29			70	35502			7899			34175	34188	2795	Conjure a <col=ffffff>Phantom Guardian</col> from the Underworld.
+33965	Conjure Undead Army	necromancy	16973	15	threshold	2	99	necromancy	29				35502			7899			32988	33000	2795	Conjure an <col=ffffff>Undead Army</col> from the Underworld.
+48296	Touch of Death	necromancy	16973	2	basic	1	13	necromancy	29	90	24		35456			7859	7860		30076	32079	2795	Touch the target with a hand of Death.
+48297	Finger of Death	necromancy	16973	3	threshold	2	8	necromancy	29	-600	0		35458			7861	7862		30077	32080	2795	Inflict searing pain on the target.
+48298	Soul Sap	necromancy	16973	5	basic	1	54	necromancy	29	90	9		35461			7863	7864		30080	32082	2795	Sap the target's soul.
+48299	Soul Strike	necromancy	16973	6	threshold	2	54	necromancy	29		0		35466			7871	7872	7873	30082	32083	2795	Strike the target with a residual soul.
+48301	Volley of Souls	necromancy	16973	7	threshold	2	66	necromancy	29		0						7879		30088	32106	2795	Send a volley of residual souls towards the target.
+48308	Bloat	necromancy	16973	10	threshold	2	48	necromancy	29	-200	0		35477			7884	7885		30016	32006	2795	Bloat the target, causing them to take damage over time.
+48309	Blood Siphon	necromancy	16973	11	threshold	2	36	necromancy	29		75		35482			7889			30017	32007	2795	Siphon blood from enemies before releasing a powerful attack on your target.
+48311	Spectral Scythe	necromancy	16973	12	threshold	2	62	necromancy	29	-100	25		35489						30084	32084	2795	Swipe a spectral scythe in front of you.
+48314	Death Skulls	necromancy	16973	13	ultimate	4	28	necromancy	29	-600	100		35472			7881		7882	30074	32064	2795	Launch a flurry of skulls at the target.
+48324	Living Death	necromancy	16973	14	ultimate	4	76	necromancy	29	-1000	150	50							30078	32081	2795	Master your instincts and transcend into a Death form.
+48325	City of Um Teleport	necromancy	16973	101	threshold	2	24	necromancy	29										30715	32366	2795	Teleport to the City of Um.
+49390	Ungael Teleport	necromancy	16973	110	threshold	2	75	necromancy	29										33716	33748	2795	Teleport to Ungael's ritual site.
+48328	Life Transfer	necromancy	16973	102	threshold	2	76	necromancy	29		75								30704	32364	2795	Sacrifice part of your life to extend your link to spirits from the Underworld.
+48326	Lesser Bone Shield	necromancy	16973	103	threshold	2	25	necromancy	29								7905		30697	32361	2795	Surround yourself with a whirlwind of bones.
+48327	Greater Bone Shield	necromancy	16973	104	threshold	2	73	necromancy	29								7906		30628	32360	2795	Surround yourself with a whirlwind of bones.
+48329	Threads of Fate	necromancy	16973	105	threshold	2	44	necromancy	29		75	11							30734	32367	2795	Link multiple enemies to share the same fate.
+48330	Invoke Death	necromancy	16973	106	threshold	2	80	necromancy	29		6	20							30702	32363	2795	Call on Death for additional power.
+48331	Darkness	necromancy	16973	107	threshold	2	86	necromancy	29		0	1200							30700	32362	2795	Shroud yourself in darkness.
+48332	Split Soul	necromancy	16973	108	threshold	2	92	necromancy	29		100	34							30706	32365	2795	Unleash a dark power within.
+49072	Invoke Lord of Bones	necromancy	16973	109	threshold	2	78	necromancy	29			100							33147	33354	2795	Call on the Lord of Bones for additional power.
+14710	Anticipation	defence	6736	1	basic	1	3	defence	5	90	41	16		6698	18069				14219	3160	2795	Focus your mind to anticipate incoming attacks.<br>- Reduce all damage taken by <col=ffffff>10%</col>.<br>- Immune to <col=ffffff>stuns</col>.<br>- <col=ffffff>10.2s</col> duration.
+14711	Freedom	defence	6736	2	basic	1	34	defence	5	90	50	10		6701	18070				14220	3163	2795	Break free from all that stops you.<br>- Remove <col=ffffff>stuns</col> and <col=ffffff>binds</col>.<br>- Clear <col=ffffff>damage over time</col> effects.<br>- Gain immunity to <col=ffffff>stuns</col> and <col=ffffff>binds</col>.<br>- <col=ffffff>6s</col> duration.
+14712	Provoke	defence	6736	3	basic	1	24	defence	5	90	17								14221	3164	2795	Taunt the target.<br>- Force the target to attack you.<br>- In <col=ffffff>PvP</col>, reduce both targeted player's and your damage towards other players by <col=ffffff>50%</col> for <col=ffffff>6s</col>.
+14713	Resonance	defence	6736	4	basic	1	48	defence	5	90	50	10							14222	3165	2795	Channel power into your shield to block an attack.<br>- Block the next attack.<br>- <col=ffffff>6s</col> duration.<br>- Heal for <col=ffffff>50%-100%</col> damage blocked, based on the level of shield active.<br>- Powerful attacks will have their damage blocked, but will not heal you.
+14714	Preparation	defence	6736	5	basic	1	67	defence	5	90	34	16							14223	3166	2795	Ready yourself for the coming attacks.
+14715	Bash	defence	6736	6	basic	1	8	defence	5	90	25		18080						14224	3177	2795	Slam your shield into the target.
+14716	Reflect	defence	6736	7	threshold	3	37	defence	5	-150	50	16	18107						14225	3178	2795	Use your shield to return attacks back at the attacker.
+14717	Debilitate	defence	6736	8	threshold	3	55	defence	5	-150	50			6700	18074				14226	3179	2795	Perform a debilitating kick to the target.<br>- <col=ffffff>20%-100%</col> ability damage.<br>- Reduce the damage taken from the target by <col=ffffff>50%</col>.<br>- <col=ffffff>7.8s-13.8s</col> duration based on the level of shield active.
+14718	Revenge	defence	6736	9	threshold	3	15	defence	5	-150	75	32		6702	18098				14227	3180	2795	The best defence is offence.
+14719	Barricade	defence	6736	10	ultimate	4	81	defence	5	-1000	100	16	18091						14228	3205	2795	Summon an impenetrable dome of shields.<br>- Prevent all damage received.<br>- <col=ffffff>4.8s-10.2s</col> duration based on the level of shield active.
+14720	Rejuvenate	defence	6736	11	ultimate	4	52	defence	5	-1000	500	16		6705	18082				14229	3206	2795	Channel your adrenaline to heal yourself.<br>- Restore <col=ffffff>2.5%</col> of your lifepoints every <col=ffffff>0.6s</col> over <col=ffffff>9.6s</col>.<br>- <col=ffffff>Heal over time</col>.<br>- Fully restore your drained stats.
+14721	Immortality	defence	6736	12	ultimate	4	29	defence	5	-1000	200	50							14230	3207	2795	Show tenacity even in the face of death.<br>- Reduce all damage taken by <col=ffffff>25%</col>.<br>- <col=ffffff>30s</col> duration.<br>- If you die during this period, immediately return to life with <col=ffffff>40%</col> of your maximum lifepoints.<br>- The damage reduction effect is removed upon returning to life.
+19252	Natural Instinct	defence	6736	13	ultimate	4	85	defence	5	-1000	200	34							16549	3208	2795	Leech the targets energy.<br>- Steal the target's <col=ffffff>adrenaline</col> and grant yourself the same amount.<br>- If the target does not have adrenaline to leech, increase your <col=ffffff>adrenaline</col> gain by <col=ffffff>100%</col>.<br>- <col=ffffff>20.4s</col> duration.
+25028	Devotion	defence	6736	14	threshold	3	1	defence	5	-150	100	16							21665	3210	2795	Empower yourself with the protection of the gods.<br>- Increase the effectiveness of your protection prayers to <col=ffffff>100%</col>(<col=ffffff>75%</col> in <col=ffffff>PvP</col>).<br>- <col=ffffff>9.6s</col> duration.<br>- Killing an enemy extends the duration by <col=ffffff>4.8s</col> up to a maximum of <col=ffffff>19.2s</col>.
+37206	Unsullied	defence	6736	15	utility	7	1	defence	5	0	100	50							1525		2795	Clean yourself of corruption.<br>- Stop Sophanem corruption effect increasing your damage taken without losing the damage boost.<br>- <col=ffffff>30s</col> duration.<br>- <col=ffffff>Revolution</col> will not trigger this ability.<br>- Generates no <col=ffffff>adrenaline</col>.
+37207	Aggression	defence	6736	16	utility	7	1	defence	5	0	150								1516		2795	Burst out in anger.<br>- Force up to <col=ffffff>8</col> enemies within <col=ffffff>5</col> tiles to attack you.<br>- <col=ffffff>Revolution</col> will not trigger this ability.<br>- Has no effect in <col=ffffff>PvP</col>.<br>- Generates no <col=ffffff>adrenaline</col>.
+45045	Divert	defence	6736	17	basic	1	48	defence	5	90	50	10							15035	15077	2795	Channel power into your shield to block an attack.<br>- Block the next attack.<br>- <col=ffffff>6s</col> duration.<br>- Generate <col=ffffff>0.8%</col> adrenaline for every <col=ffffff>100-200</col> damage blocked, based on the level of shield active with diminishing returns at <col=ffffff>3,000</col>, <col=ffffff>6,000</col> and <col=ffffff>9,000</col> damage blocked.<br>- Powerful attacks will have their damage blocked, but will not generate adrenaline.
+45340	Cease	defence	6736	18	utility	7	1	defence	5	0	0	10							15036	15078	2795	Stops all current and pending attacks.<br>- Stops any in use <col=ffffff>channelled</col> ability. <br>- Cancels any <col=ffffff>queued</col> abilities, including those queued by <col=ffffff>revolution</col>.<br>- Disables <col=ffffff>auto-retaliate</col> for <col=ffffff>6s</col>.<br>- Prevents <col=ffffff>familiars</col> from attacking for <col=ffffff>6s</col>.<br>- Attacking an enemy will cancel the effect. <br>- <col=ffffff>Revolution</col> mode will not trigger this ability.<br>- Generates no <col=ffffff>adrenaline</col>.
+14690	Regenerate	constitution	6737	1	utility	7	1	constitution	6	0	0								14267	3118	2795	Focus your remaining adrenaline to heal yourself.
+14691	Incite	constitution	6737	2	utility	7	24	constitution	6	0	0								14268	3119	2795	Encourage the target to attack you.
+14693	Balanced Stance	constitution	6737	4	utility	7	1	constitution	6	0	0								16854	6443	2795	Adopt a balanced fighting stance.<br>- Only used within Barbarian Assault.
+14694	Defensive Stance	constitution	6737	5	utility	7	1	constitution	6	0	0								16853	6442	2795	Adopt a defensive fighting stance.<br>- Only used within Barbarian Assault.
+14695	Aggressive Stance	constitution	6737	6	utility	7	1	constitution	6	0	0								16852	6441	2795	Adopt an aggressive fighting stance.<br>- Only used within Barbarian Assault.
+19253	Guthix's Blessing	constitution	6737	9	ultimate	4	85	constitution	6	-1000	500	16							16558	3121	2795	Invoke a butterfly that heals you.
+24188	Sacrifice	constitution	6737	10	basic	1	1	constitution	6	90	50			8108	22338				21666	3122	2795	Offer a sacrifice, leaving the target forsaken.
+24189	Transfigure	constitution	6737	11	ultimate	4	1	constitution	6	-1000	300	10							26106	3126	2795	Empower your body.
+28179	Ice Asylum	constitution	6737	14	ultimate	4	91	constitution	6	-1000	500	36		8807	23207				17503	3123	2795	Summon a healing crystal.
+28429	Siphon	constitution	6737	15	basic	1	20	constitution	6	0	100	10		6733	18205				18764	6453	2795	Siphon strength from the target.
+28430	Weapon Special Attack	constitution	6737	16	special	5	1	constitution	6										26105	3125	2795	Some of the most powerful weapons grant you unique special attacks.
+24362	Shout - Tofu	constitution	6737	17	utility	7	0	constitution	6	0	0								16864	16864	2795	Shout about tofu.<br>- Only used within Barbarian Assault.
+24363	Shout - Crackers	constitution	6737	18	utility	7	0	constitution	6	0	0								16865	16865	2795	Shout about crackers.<br>- Only used within Barbarian Assault.
+24364	Shout - Worms	constitution	6737	19	utility	7	0	constitution	6	0	0								16866	16866	2795	Shout about worms.<br>- Only used within Barbarian Assault.
+24365	Shout - Red Egg	constitution	6737	20	utility	7	0	constitution	6	0	0								16861	16861	2795	Shout about red eggs.<br>- Only used within Barbarian Assault.
+24366	Shout - Green Egg	constitution	6737	21	utility	7	0	constitution	6	0	0								16862	16862	2795	Shout about green eggs.<br>- Only used within Barbarian Assault.
+24367	Shout - Blue Egg	constitution	6737	22	utility	7	0	constitution	6	0	0								16863	16863	2795	Shout about blue eggs.<br>- Only used within Barbarian Assault.
+24368	Shout - Poisoned Worms	constitution	6737	23	utility	7	0	constitution	6	0	0								16859	6439	2795	Shout about poisoned worms.<br>- Only used within Barbarian Assault.
+24369	Shout - Poisoned Tofu	constitution	6737	24	utility	7	0	constitution	6	0	0								16858	6438	2795	Shout about poisoned tofu.<br>- Only used within Barbarian Assault.
+24370	Shout - Poisoned Meat	constitution	6737	25	utility	7	0	constitution	6	0	0								16860	6440	2795	Shout about poisoned meat.<br>- Only used within Barbarian Assault.
+24371	Shout - Balanced Stance	constitution	6737	26	utility	7	0	constitution	6	0	0								16857	6446	2795	Shout about balanced stance.<br>- Only used within Barbarian Assault.
+24372	Shout - Aggressive Stance	constitution	6737	27	utility	7	0	constitution	6	0	0								16855	6444	2795	Shout about aggressive stance.<br>- Only used within Barbarian Assault.
+24373	Shout - Defensive Stance	constitution	6737	28	utility	7	0	constitution	6	0	0								16856	6445	2795	Shout about defensive stance.<br>- Only used within Barbarian Assault.
+31649	Tuska's Wrath	constitution	6737	29	basic	1	50	constitution	6	90	25			10070	18355				8861	3124	2795	Invoke the wrath of Tuska on the target.
+31982	Storm Shards	constitution	6737	30	basic	1	70	constitution	6	90	50			10236	26979			5704	19227	6454	2795	Hurl a Storm Shard at the target.
+31983	Shatter	constitution	6737	31	threshold	3	70	constitution	6	-150	200			10237	26980		5707	5709	19228	6452	2795	Shatter any shards on the target.
+31984	Onslaught	constitution	6737	32	ultimate	4	90	constitution	6	-1000	200			10235	26960				19289	6450	2795	Assault the target with unbridled power.
+33650	Reprisal	constitution	6737	33	threshold	3	85	constitution	6	-150	100	10							799	6451	2795	Use the targets power against them.
+37199	Ingenuity of the Humans	constitution	6737	34	utility	7	1	constitution	6	0	150	10							1521	6889	2795	Study the target.
+37200	Demon Slayer	constitution	6737	35	utility	7	1	constitution	6	0	100	17							1517	6885	2795	Gain courage against demons.
+37201	Dragon Slayer	constitution	6737	36	utility	7	1	constitution	6	0	100	17							1518	6886	2795	Gain courage against dragons.
+37202	Undead Slayer	constitution	6737	37	utility	7	1	constitution	6	0	100	17							1524	6892	2795	Gain courage against the undead.
+37203	Limitless	constitution	6737	38	utility	7	1	constitution	6	0	150	10							1522	6890	2795	Open your mind and realise your potential.
+37204	Slayer's Insight	constitution	6737	39	utility	7	1	constitution	6	0	200	50							1523		2795	Gain insight into the target.
+37205	Kuradal's Favour	constitution	6737	40	utility	7	1	constitution	6	0	100	50							1519		2795	Flaunt your slayer prowess.
+44225	Eat Food	constitution	6737	41	utility	7	0	constitution	6	0	0								1601	6894	2795	Consume the first piece of food in your backpack.
+11748	Essence of Finality	constitution	6737	42	special	5	1	constitution	6										10231	10997	2795	Harness the power of a special attack stored within an Essence of Finality amulet.

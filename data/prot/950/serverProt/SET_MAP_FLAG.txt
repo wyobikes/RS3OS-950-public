@@ -1,0 +1,7 @@
+unk1 ubyte
+localY ubyte
+localX ubytec
+unk6 ubytec
+target intv2
+unk4 u128byte
+unk5 u128byte

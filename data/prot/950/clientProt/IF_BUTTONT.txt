@@ -1,0 +1,6 @@
+targetsub ushort
+selsub ushort128
+targetobj umediumle
+selobj umediumx1
+selhash intv2
+targethash intle

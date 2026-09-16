@@ -1,0 +1,5 @@
+selobj umedium
+selsub ushortle128
+selhash intv1
+npc ushortle128
+ctrl ubyte

@@ -1,0 +1,13 @@
+y ushort
+flags ubyte128
+x ushortle128
+junk1 ubyte
+junk2 ubyte
+junk3 ushort
+junk4 ubyte
+junk5 ubyte
+junk6 ubyte
+junk7 ubyte
+camera1 ushort
+camera2 ushort
+junk8 ubyte

@@ -1,0 +1,7 @@
+coord ubyte
+spotanim ushort
+height ushort
+delay ushort
+rotation ubyte
+unread umedium
+subtile umedium

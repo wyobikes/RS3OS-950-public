@@ -1,0 +1,5 @@
+slot ushortle
+op ubyte
+label string
+hash int
+defFlag ubytec

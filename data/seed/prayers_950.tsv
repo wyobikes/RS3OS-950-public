@@ -1,0 +1,92 @@
+book	slot	tier	struct	name	level	varbit	varp	bit	drain	bar_index	stat_req	effect
+prayers	0	1	14541	Thick Skin	1	16739	3272	0	10	1	-	{{scm|Defence|+2}} levels (for armour)
+prayers	0	2	14542	Rock Skin	10	16739	3272	0	40	4	-	{{scm|Defence|+4}} levels (for armour)
+prayers	0	3	14543	Steel Skin	28	16739	3272	0	100	10	-	{{scm|Defence|+6}} levels (for armour)
+prayers	1	1	14545	Burst of Strength	4	16740	3272	1	10	2	-	+2% {{scm|Melee}} damage
+prayers	1	2	14546	Superhuman Strength	13	16740	3272	1	40	5	-	+4% {{scm|Melee}} damage
+prayers	1	3	14547	Ultimate Strength	31	16740	3272	1	100	11	-	+6% {{scm|Melee}} damage
+prayers	2	1	14549	Clarity of Thought	7	16741	3272	2	10	3	-	{{scm|Attack|+2}} levels (for accuracy)
+prayers	2	2	14550	Improved Reflexes	16	16741	3272	2	40	6	-	{{scm|Attack|+4}} levels (for accuracy)
+prayers	2	3	14551	Incredible Reflexes	34	16741	3272	2	100	12	-	{{scm|Attack|+6}} levels (for accuracy)
+prayers	3	1	14557	Unstoppable Force	8	16753	3272	14	10	51	-	+2% {{skill clickpic|Ranged}} damage
+prayers	3	2	14558	Unrelenting Force	26	16753	3272	14	40	52	-	+4% {{skill clickpic|Ranged}} damage
+prayers	3	3	14559	Overpowering Force	44	16753	3272	14	100	53	-	+6% {{skill clickpic|Ranged}} damage
+prayers	4	1	14553	Sharp Eye	8	16751	3272	12	10	19	-	{{scm|Ranged|+2}} levels (for accuracy)
+prayers	4	2	14554	Hawk Eye	26	16751	3272	12	40	21	-	{{scm|Ranged|+4}} levels (for accuracy)
+prayers	4	3	14555	Eagle Eye	44	16751	3272	12	100	23	-	{{scm|Ranged|+6}} levels (for accuracy)
+prayers	5	1	14565	Charge	9	16754	3272	15	10	54	-	+2% {{skill clickpic|Magic}} damage
+prayers	5	2	14566	Super Charge	27	16754	3272	15	50	55	-	+4% {{skill clickpic|Magic}} damage
+prayers	5	3	14567	Overcharge	45	16754	3272	15	100	56	-	+6% {{skill clickpic|Magic}} damage
+prayers	6	1	14561	Mystic Will	9	16752	3272	13	10	20	-	{{scm|Magic|+2}} levels (for accuracy)
+prayers	6	2	14562	Mystic Lore	27	16752	3272	13	40	22	-	{{scm|Magic|+4}} levels (for accuracy)
+prayers	6	3	14563	Mystic Might	45	16752	3272	13	100	24	-	{{scm|Magic|+6}} levels (for accuracy)
+prayers	7	1	48365	Decay	10	53272	3273	1	10	78	-	+2% {{skill clickpic|Necromancy}} damage
+prayers	7	2	48366	Hastened Decay	28	53272	3273	1	40	79	-	+4% {{skill clickpic|Necromancy}} damage
+prayers	7	3	48367	Accelerated Decay	46	53272	3273	1	100	80	-	+6% {{skill clickpic|Necromancy}} damage
+prayers	8	1	48361	Hand of Judgement	10	53271	3273	0	10	75	-	+2 {{skill clickpic|Necromancy}} levels when determining accuracy
+prayers	8	2	48362	Hand of Fate	28	53271	3273	0	10	76	-	+4 {{skill clickpic|Necromancy}} levels when determining accuracy
+prayers	8	3	48363	Hand of Doom	46	53271	3273	0	100	77	-	+6 {{skill clickpic|Necromancy}} levels when determining accuracy
+prayers	9	0	14572	Rapid Restore	19	16742	3272	3	10	7	-	2x restore rate for all {{scm|skill}} except {{scm|Constitution}}, {{scm|Prayer}} and {{scm|Summoning}}
+prayers	10	0	14573	Rapid Heal	22	16743	3272	4	10	8	-	-
+prayers	11	0	14575	Protect Item	25	16744	3272	5	10	9	-	-
+prayers	12	0	14579	Protect from Summoning	35	16755	3272	16	150	25	-	-
+prayers	13	0	14576	Protect from Magic	37	16745	3272	6	150	13	-	-
+prayers	14	0	14577	Protect from Ranged	40	16746	3272	7	150	14	-	Protection from Ranged attacks - 50%. Reduces the duration of the bind from [[bolas]] by 25%.
+prayers	15	0	14578	Protect from Melee	43	16747	3272	8	150	15	-	-
+prayers	16	0	48369	Protect from Necromancy	46	53274	3273	3	150	82	-	-
+prayers	17	0	14580	Retribution	46	16748	3272	9	150	16	-	-
+prayers	18	0	14581	Redemption	49	16749	3272	10	150	17	-	-
+prayers	19	0	14582	Smite	52	16750	3272	11	200	18	-	Drains enemy's prayer by 1 for every 40 (26 legacy) damage dealt. Cap of 100 prayer point drained per hit.
+prayers	20	0	14568	Chivalry	60	16756	3272	17	150	26	1:65	{{scm|Attack|+7}} levels (for accuracy)<br> +7% {{scm|Melee}} damage<br> {{scm|Defence|+7}} levels (for armour)
+prayers	21	0	14574	Rapid Renewal	65	16758	3272	19	100	28	-	-
+prayers	22	0	14569	Piety	70	16757	3272	18	200	27	1:70	+8 {{scm|Attack}} levels (for accuracy)<br> +8% {{scm|Melee}} damage<br>+8 {{scm|Defence}} levels (for armour)
+prayers	23	0	14571	Rigour	70	16760	3272	21	200	30	1:70	+8 {{skill clickpic|Ranged}} levels (for accuracy)<br />+8% {{skill clickpic|Ranged}} damage<br />+8 {{skill clickpic|Defence}} levels (for armour)
+prayers	24	0	14570	Augury	70	16759	3272	20	200	29	1:70	+8 {{skill clickpic|Magic}} levels (for accuracy)<br />+8% {{skill clickpic|Magic}} damage<br/ > +8 {{skill clickpic|Defence}} levels (for armour)
+prayers	25	0	48368	Sanctity	70	53273	3273	2	200	81	1:70	+8 {{skill clickpic|Necromancy}} levels (for accuracy)<br />+8% {{skill clickpic|Necromancy}} damage<br />+8 {{skill clickpic|Defence}} levels (for armour)
+prayers	26	0	50228	Eclipsed Soul	75	55986	3273	5	150	91	2:75,4:75,6:75,28:75	-
+prayers	27	0	50077	Divine Rage	85	55729	3273	4	150	90	2:85,4:85,6:85,28:85	+5% {{skill clickpic|Melee}} damage<br>+5% {{skill clickpic|Ranged}}damage<br>+5% {{skill clickpic|Magic}} damage<br>+5% {{skill clickpic|Necromancy}} damage
+curses	0	0	14583	Protect Item	50	16761	3275	0	10	31	-	-
+curses	1	0	14584	Sap Melee Attack	50	16762	3275	1	100	32	-	-2 to -6 enemy {{skill clickpic|Attack}} levels (for accuracy)
+curses	2	0	14585	Sap Ranged Attack	52	16763	3275	2	100	33	-	-2 to -6 enemy {{skill clickpic|Ranged}} levels when determining [[hit chance]]
+curses	3	0	14586	Sap Ranged Strength	53	16786	3275	25	100	57	-	-3% to -9% enemy {{skill clickpic|Ranged}} damage (PvM)<br />-2% to -6% enemy {{skill clickpic|Ranged}} damage (PvP)
+curses	4	0	14587	Sap Magic Attack	54	16764	3275	3	100	34	-	-2 to -6 enemy {{skill clickpic|Magic}} levels when determining [[hit chance]]
+curses	5	0	14588	Sap Magic Strength	55	16785	3275	24	100	59	-	-3% to -9% enemy {{skill clickpic|Magic}} damage (PvM)<br />-2% to -6% enemy {{skill clickpic|Magic}} damage (PvP)
+curses	6	0	14589	Sap Adrenaline	56	16765	3275	4	100	35	-	Drain enemy [[adrenaline]] (10% at a time, every couple hits).
+curses	7	0	14590	Sap Defence	57	16788	3275	27	100	64	-	-2 to -6 enemy {{skill clickpic|Defence}} levels (for armour)
+curses	8	0	14591	Sap Melee Strength	58	16787	3275	26	100	63	-	-3% to -9% enemy {{sc|attack}} damage (PvM)<br />-2% to -6% enemy {{sc|attack}} damage (PvP)
+curses	9	0	14592	Berserker	59	16766	3275	5	50	36	-	Boosted stats last 15% longer.
+curses	10	0	48370	Sap Necromancy Attack	60	53275	5859	11	100	83	-	-2 to -6 enemy {{skill clickpic|Necromancy}} levels when determining [[hit chance]]
+curses	11	0	48371	Sap Necromancy Strength	61	53276	5859	12	100	84	-	-3% to -9% enemy {{skill clickpic|Necromancy}} damage (PvM)<br />-2% to -6% enemy {{skill clickpic|Necromancy}} damage (PvP)
+curses	12	0	14593	Deflect Summoning	62	16767	3275	6	150	37	-	Protect against damage from {{skill clickpic|Summoning}} attacks and [[Summoning scrolls]] and can deflect some damage back.
+curses	13	0	14594	Deflect Magic	65	16768	3275	7	150	38	-	Protects against damage from {{skill clickpic|Magic}} attacks and can deflect some damage back onto the attacker.
+curses	14	0	14595	Deflect Ranged	68	16769	3275	8	150	39	-	Protects against damage from {{skill clickpic|Ranged}} attacks and can deflect some damage back onto the attacker. Reduces the duration of the bind from [[bolas]] by 25%.
+curses	15	0	14596	Deflect Melee	71	16770	3275	9	150	40	-	Protects against damage from {{skill clickpic|Attack}} attacks and can deflect some damage back onto the attacker.
+curses	16	0	48372	Deflect Necromancy	73	53281	5859	17	150	89	-	Protects against damage from {{skill clickpic|Necromancy}} attacks and can deflect some damage back onto the attacker.
+curses	17	0	14597	Leech Melee Attack	74	16771	3275	10	200	41	-	+2 to +5 {{skill clickpic|Attack}} levels (for accuracy)<br />-4 to -8 enemy {{skill clickpic|Attack}} levels (for accuracy)
+curses	18	0	14598	Leech Ranged Attack	76	16772	3275	11	200	42	-	+2 to +5 {{skill clickpic|Ranged}} levels (for accuracy)<br />-4 to -8 enemy {{skill clickpic|Ranged}} levels (for accuracy)
+curses	19	0	14599	Leech Ranged Strength	77	16781	3275	20	200	58	-	+2% to +8% {{skill clickpic|Ranged}} damage<br />-6% to -12% enemy {{skill clickpic|Ranged}} damage (PvM)<br />-4% to -8% enemy {{skill clickpic|Ranged}} damage (PvP)
+curses	20	0	14600	Leech Magic Attack	78	16773	3275	12	200	43	-	+2 to +5 {{skill clickpic|Magic}} levels (for accuracy)<br />-4 to -8 enemy {{skill clickpic|Magic}} levels (for accuracy)
+curses	21	0	14601	Leech Magic Strength	79	16782	3275	21	200	60	-	+2% to +8% {{skill clickpic|Magic}} damage<br />-6% to -12% enemy {{skill clickpic|Magic}} damage (PvM)<br />-4% to -8% enemy {{skill clickpic|Magic}} damage (PvP)
+curses	22	0	14602	Leech Defence	80	16774	3275	13	200	44	-	+2 to +5 {{skill clickpic|Defence}} levels (for armour)<br />-4 to -8 enemy {{skill clickpic|Defence}} levels (for armour)
+curses	23	0	32273	Light Form	80	29066	3275	29	300	66	-	-
+curses	24	0	32274	Dark Form	80	29067	3275	30	300	67	-	-
+curses	25	0	14603	Leech Melee Strength	82	16775	3275	14	200	45	-	+2% to +8% {{sc|attack}} damage<br />-6% to -12% enemy {{sc|attack}} damage (PvM)<br />-4% to -8% enemy {{sc|attack}} damage (PvP)
+curses	26	0	48373	Leech Necromancy Attack	83	53277	5859	13	200	85	-	+2 to +5 {{skill clickpic|Necromancy}} levels (for accuracy)<br />-4 to -8 enemy {{skill clickpic|Necromancy}} levels (for accuracy)
+curses	27	0	14604	Leech Run Energy	84	16776	3275	15	200	46	-	Steals an enemy's [[Run Energy]] and restores it to the player. (10% every couple hits)
+curses	28	0	48374	Leech Necromancy Strength	85	53278	5859	14	200	86	-	+2% to +8% {{skill clickpic|Necromancy}} damage<br />-6% to -12% enemy {{skill clickpic|Necromancy}} damage (PvM)<br />-4% to -8% enemy {{skill clickpic|Necromancy}} damage (PvP)
+curses	29	0	14605	Leech Adrenaline	86	16777	3275	16	200	47	-	Steals an enemy's [[Adrenaline]] and restores it to the player.
+curses	30	0	29241	Chronicle Attraction	87	49330	5859	1	100	70	-	-
+curses	31	0	32275	Soul Link	88	29068	3275	31	300	68	-	While active you will share half of all healing and damage with another player using this prayer within 5 squares.
+curses	32	0	14606	Wrath	89	16778	3275	17	200	48	-	Inflicts damage to nearby targets if you die.
+curses	33	0	32276	Teamwork Protection	89	29069	5859	0	300	69	-	Gives a 5% damage reduction and 1% damage reflection from all combat styles for every player around you using this prayer (max 5).
+curses	34	0	32278	Superheat Form	91	29071	5859	2	100	71	-	While active logs are burned for experience, smelting is 0.6 seconds faster and smithing a low or medium heat item acts as a medium or high heat item.
+curses	35	0	14607	Soul Split	92	16779	3275	18	300	49	-	Heals the player by 10% of the damage dealt and lowers the enemy's prayer by 1 point for every 66 (45 legacy) damage.
+curses	36	0	32272	Fortitude	94	29065	3275	28	300	65	-	+15% {{skill clickpic|Defence}}<br>+10% more {{skill clickpic|Constitution}}<br>+3% damage reduction<br>+10% accuracy to [[Debilitate]] and [[Bash]]<br>Base regeneration doubled<br>Passive regeneration works in combat
+curses	37	0	14608	Turmoil	95	16780	3275	19	300	50	-	+10 {{skill clickpic|Attack}} levels (for accuracy)<br>+10% {{sc|attack}} damage<br> +10 {{skill clickpic|Defence}} levels (for armour)<br><br> Drains enemy -6 to -10 {{skill clickpic|Attack}} levels (for accuracy)<br> -6 to -10 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{sc|attack}} damage (PvM)<br>-6% to -10% enemy {{sc|attack}} damage (PvP)
+curses	38	0	14610	Anguish	95	16783	3275	22	300	62	-	+10 {{skill clickpic|Ranged}} levels (for accuracy)<br>+10% {{skill clickpic|Ranged}} damage<br> +10 {{skill clickpic|Defence}} levels (for armour)<br><br>Drains enemy -6 to -10 {{skill clickpic|Ranged}} levels (for accuracy)<br>-6 to -10 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{skill clickpic|Ranged}} damage (PvM)<br>-6% to -10% enemy {{skill clickpic|Ranged}} damage (PvP)
+curses	39	0	14609	Torment	95	16784	3275	23	300	61	-	+10 {{skill clickpic|Magic}} levels (for accuracy)<br>+10% {{skill clickpic|Magic}} damage<br> +10 {{skill clickpic|Defence}} levels (for armour)<br><br>Drains enemy -6 to -10 {{skill clickpic|Magic}} levels (for accuracy)<br> -6 to -10 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{skill clickpic|Magic}} damage (PvM)<br>-6% to -10% enemy {{skill clickpic|Magic}} damage (PvP)
+curses	40	0	48375	Sorrow	95	53279	5859	15	300	87	-	+10 {{skill clickpic|Necromancy}} levels (for accuracy)<br>+10% {{skill clickpic|Necromancy}} damage<br> +10 {{skill clickpic|Defence}} levels (for armour)<br><br>Drains enemy -6 to -10 {{skill clickpic|Necromancy}} levels (for accuracy)<br> -6 to -10 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{skill clickpic|Necromancy}} damage (PvM)<br>-6% to -10% enemy {{skill clickpic|Necromancy}} damage (PvP)
+curses	41	0	35360	Malevolence	99	34866	5859	8	400	72	-	+12 {{skill clickpic|Attack}} levels (for accuracy)<br>+12% {{sc|attack}} damage<br> +12 {{skill clickpic|Defence}} levels (for armour)<br><br> Drains enemy -6 to -10 {{skill clickpic|Attack}} levels (for accuracy)<br> -8 to -12 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{sc|attack}} damage (PvM)<br>-6% to -10% enemy {{sc|attack}} damage (PvP)
+curses	42	0	35361	Desolation	99	34867	5859	9	400	73	-	+12 {{skill clickpic|Ranged}} levels (for accuracy)<br>+12% {{skill clickpic|Ranged}} damage<br> +12 {{skill clickpic|Defence}} levels (for armour)<br><br>Drains enemy -6 to -10 {{skill clickpic|Ranged}} levels (for accuracy)<br>-8 to -12 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{skill clickpic|Ranged}} damage (PvM)<br>-6% to -10% enemy {{skill clickpic|Ranged}} damage (PvP)
+curses	43	0	35362	Affliction	99	34868	5859	10	400	74	-	+12 {{skill clickpic|Magic}} levels (for accuracy)<br>+12% {{skill clickpic|Magic}} damage<br> +12 {{skill clickpic|Defence}} levels (for armour)<br><br>Drains enemy -6 to -10 {{skill clickpic|Magic}} levels (for accuracy)<br> -8 to -12 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{skill clickpic|Magic}} damage (PvM)<br>-6% to -10% enemy {{skill clickpic|Magic}} damage (PvP)
+curses	44	0	48376	Ruination	99	53280	5859	16	400	88	-	+12 {{skill clickpic|Necromancy}} levels (for accuracy)<br>+12% {{skill clickpic|Necromancy}} damage<br>+12 {{skill clickpic|Defence}} levels (for armour)<br><br>Drains enemy -6 to -10 {{skill clickpic|Necromancy}} levels (for accuracy)<br>-8 to -12 enemy {{skill clickpic|Defence}} levels (for armour)<br>-9% to -15% enemy {{skill clickpic|Necromancy}} damage (PvM)<br>-6% to -10% enemy {{skill clickpic|Necromancy}} damage (PvP)

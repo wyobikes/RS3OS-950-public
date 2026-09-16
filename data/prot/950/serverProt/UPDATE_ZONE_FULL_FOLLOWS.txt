@@ -1,0 +1,3 @@
+level ubyte128
+zoneX sbyte
+zoneY sbyte

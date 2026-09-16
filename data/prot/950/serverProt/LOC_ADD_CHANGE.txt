@@ -1,0 +1,3 @@
+coord ubyte
+loc intv2
+shapeRotation ubyte128
