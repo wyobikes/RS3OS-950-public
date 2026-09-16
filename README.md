@@ -11,7 +11,11 @@ no Jagex servers involved after the initial client and cache download.
 > Jagex by tools you run yourself. See [Legal](#legal).
 
 
-Thank you to the small team of people from ONXT and other various RS3 projects. This is a amalgamation of all of them, wrapped in an easy to digest package(hopefully)
+Thank you to the small team of people from ONXT and other various RS3 projects.
+
+Sources and research from: RuneScape Wiki, Jagex's Bestiary API, DarkanRS and OpenNXT
+
+This is an amalgamation of all of them, wrapped in an easy to digest package(hopefully)
 
 ---
 
