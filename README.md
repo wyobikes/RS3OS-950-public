@@ -1,4 +1,4 @@
-# RS3OS
+# RS3OS -- Runescape3 Open Server
 
 A private game server for the RuneScape 3 **NXT** client, build **950**.
 
