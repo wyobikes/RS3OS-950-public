@@ -29,11 +29,11 @@ object LocClipping {
     const val DIAGONAL_TYPE = 9
 
     @Volatile
-    var diagonalWallsEnabled: Boolean = System.getProperty("opennxt.experiment.map.diagonalWalls") == "true"
+    var diagonalWallsEnabled: Boolean = System.getProperty("opennxt.experiment.map.diagonalWalls") != "false"
 
     val PROVENANCE: String =
         "wall mask: edges from loc types 0/2, corners from 1/3; diagonal walls (type 9) " +
-            "${if (diagonalWallsEnabled) "block the whole tile" else "ignored"} (-Dopennxt.experiment.map.diagonalWalls)"
+                "${if (diagonalWallsEnabled) "block the whole tile" else "ignored"} (-Dopennxt.experiment.map.diagonalWalls)"
 
     val WALL_TYPES: Set<Int> = WALL_EDGE.keys
 
