@@ -9,7 +9,8 @@ import com.opennxt.model.items.ItemContainer
 import com.opennxt.model.entity.rendering.UpdateBlockType
 import com.opennxt.model.entity.rendering.blocks.PlayerFaceDirectionBlock
 import com.opennxt.model.map.LocInteraction
-import com.opennxt.resources.MiningTable949
+import com.opennxt.resources.Names950
+import com.opennxt.resources.MiningLevels
 import com.opennxt.model.world.LocChanges
 import com.opennxt.model.world.TileLocation
 import com.opennxt.resources.sqlite.RsDatabase
@@ -39,17 +40,22 @@ object Skilling {
 
     val MINING_TABLE: Map<String, Requirement> = run {
         val out = LinkedHashMap<String, Requirement>()
-        for ((item, level) in MiningTable949.levels()) {
+        for ((item, level) in MiningLevels.levels()) {
             out[item] = Requirement(level, SkillingRates.MINING_XP_TENTHS[item] ?: DEFAULT_XP_TENTHS)
         }
         for ((item, xp) in SkillingRates.MINING_XP_TENTHS) {
-            val level = MiningTable949.levelForItem(item) ?: DEFAULT_MINING_LEVEL
+            val level = MiningLevels.levelForItem(item) ?: DEFAULT_MINING_LEVEL
             out[item] = Requirement(level, xp)
         }
         out
     }
 
-    data class Requirement(val level: Int, val xpTenths: Int, val levelSource: String = "AUTHORED", val xpSource: String = "AUTHORED")
+    data class Requirement(
+        val level: Int,
+        val xpTenths: Int,
+        val levelSource: String = "AUTHORED",
+        val xpSource: String = "AUTHORED"
+    )
 
     val DEFAULT_XP_TENTHS: Int = System.getProperty("opennxt.skilling.defaultXpTenths")?.toIntOrNull() ?: 250
 
@@ -122,7 +128,8 @@ object Skilling {
         override fun toString() = buildString {
             append("Gather(").append(outcome).append(" loc ").append(locId).append(" '").append(locName)
             append("' ").append(kind)
-            if (itemId != null) append(" -> ").append(amount).append("x ").append(itemId).append(" '").append(itemName).append("'")
+            if (itemId != null) append(" -> ").append(amount).append("x ").append(itemId).append(" '").append(itemName)
+                .append("'")
             if (xpTenths > 0) append(" +").append(xpTenths / 10.0).append(" ").append(stat).append(" xp")
             append(" level ").append(playerLevel).append("/").append(levelRequired)
             append(if (levelFromCache) " [level GROUNDED: param 23]" else " [level ${levelSource ?: "AUTHORED"}]")
@@ -144,10 +151,11 @@ object Skilling {
     var wornSupplier: (ContentPlayer) -> ItemContainer? = { null }
 
     val TOOLBELT_BASE: Map<ResourceNodes.Kind, Int> = mapOf(
-        ResourceNodes.Kind.WOODCUTTING to 1351,
-        ResourceNodes.Kind.MINING to 1265,
+        ResourceNodes.Kind.WOODCUTTING to Names950.itemId("bronze_axe"),
+        ResourceNodes.Kind.MINING to Names950.itemId("bronze_pickaxe"),
     )
     val DEFAULT_TOOLBELT: Boolean = System.getProperty("opennxt.skilling.toolbelt") != "off"
+
     @Volatile
     var toolbelt: Boolean = DEFAULT_TOOLBELT
 
@@ -165,9 +173,37 @@ object Skilling {
     }
     var firstCycleTicks: (ResourceNodes.Kind) -> Int = DEFAULT_FIRST_CYCLE
 
-    fun animationFor(kind: ResourceNodes.Kind): IntArray? = when (kind) {
-        ResourceNodes.Kind.MINING -> intArrayOf(17310, 17310, 17310, 17310)
-        ResourceNodes.Kind.WOODCUTTING -> intArrayOf(21191, 21191, 21191, 21191)
+    private val MINING_SEQ = Names950.seqId("mtx_batch6_player_mega_punch_mining")
+    private val WOODCUTTING_SEQ = Names950.seqId("human_woodcutting_bronze_axe_2013_update")
+
+    // Each hatchet item carries its exact chop animation in the cache via the
+    // `woodcutting_anim_default` param (primal -> human_woodcutting_primal_axe_2013_update,
+    // dragon -> human_woodcutting_dragon_axe_2013_update, ...). The param name is resolved
+    // through Names950 so a cache rebuild never needs a source edit here.
+    private val WOODCUTTING_ANIM_PARAM = Names950.paramId("woodcutting_anim_default")
+
+    private fun itemExtraParam(toolId: Int, paramId: Int): Int? {
+        if (!RsDatabase.available) return null
+        val json = RsDatabase.queryOne("SELECT value FROM items_attr WHERE id = ? AND field = 'extra'", toolId) {
+            it.getString(1)
+        } ?: return null
+        return com.opennxt.model.combat.NpcCombat.parseParams(json)[paramId]
+    }
+
+    private val hatchetAnimMemo = java.util.concurrent.ConcurrentHashMap<Int, java.util.Optional<Int>>()
+
+    private fun hatchetAnimationSeq(toolId: Int): Int? =
+        hatchetAnimMemo.computeIfAbsent(toolId) {
+            java.util.Optional.ofNullable(itemExtraParam(toolId, WOODCUTTING_ANIM_PARAM)?.takeIf { it >= 0 })
+        }.orElse(null)
+
+    fun animationFor(kind: ResourceNodes.Kind, toolId: Int = -1): IntArray? = when (kind) {
+        ResourceNodes.Kind.MINING -> intArrayOf(MINING_SEQ, MINING_SEQ, MINING_SEQ, MINING_SEQ)
+        ResourceNodes.Kind.WOODCUTTING -> {
+            val seq = hatchetAnimationSeq(toolId) ?: WOODCUTTING_SEQ
+            intArrayOf(seq, seq, seq, seq)
+        }
+
         else -> null
     }
 
@@ -179,6 +215,7 @@ object Skilling {
         ResourceNodes.Kind.WOODCUTTING -> "You swing your hatchet at the tree."
         else -> null
     }
+
     var animationSink: (ContentPlayer, IntArray) -> Unit = { _, _ -> }
     var messageSink: (ContentPlayer, String) -> Unit = { _, _ -> }
 
@@ -199,7 +236,8 @@ object Skilling {
         return angle
     }
 
-    @Volatile private var containedFailures = 0
+    @Volatile
+    private var containedFailures = 0
     fun containedFailures(): Int = containedFailures
 
     fun yieldMessage(kind: ResourceNodes.Kind, itemName: String): String? = when (kind) {
@@ -217,13 +255,15 @@ object Skilling {
         else when (c.kind) {
             ResourceNodes.Kind.WOODCUTTING ->
                 c.toolName?.let { SkillXpTable.woodcuttingChance(c.itemName, it, c.level) } ?: 1.0
+
             else -> 1.0
         }
     }
     var successChance: (SuccessContext) -> Double = DEFAULT_SUCCESS_CHANCE
 
     val DEFAULT_FELL_CHANCE: (String) -> Double? = { logs ->
-        if (System.getProperty("opennxt.skilling.fell") == "off") null else FELL_OVERRIDES[logs] ?: SkillXpTable.fellChance(logs)
+        if (System.getProperty("opennxt.skilling.fell") == "off") null else FELL_OVERRIDES[logs]
+            ?: SkillXpTable.fellChance(logs)
     }
 
     val FELL_OVERRIDES: Map<String, Double> = mapOf("Logs" to 1.0)
@@ -235,18 +275,24 @@ object Skilling {
         val kind: ResourceNodes.Kind,
         val startTile: TileLocation,
         var nextTick: Long,
-        var cycles: Int = 0
+        var cycles: Int = 0,
+        val toolId: Int = -1
     )
+
     private val active = java.util.Collections.synchronizedMap(java.util.IdentityHashMap<ContentPlayer, Active>())
 
     private val lastCycle: MutableMap<ContentPlayer, Long> =
         java.util.Collections.synchronizedMap(WeakHashMap<ContentPlayer, Long>())
+
     fun lastCycleOf(player: ContentPlayer): Long? = lastCycle[player]
 
     fun stopFor(player: ContentPlayer, why: String) = stop(player, why)
     fun activeCount(): Int = active.size
     fun activeFor(player: ContentPlayer): Active? = active[player]
-    internal fun clearActions() { active.clear(); lastCycle.clear() }
+    internal fun clearActions() {
+        active.clear(); lastCycle.clear()
+    }
+
     private var cyclesPaid = 0
     private var cyclesMissed = 0
     private var actionsStopped = 0
@@ -273,7 +319,9 @@ object Skilling {
         if (was != null) {
             actionsStopped++
             logger.info { "skilling: ${player.name}'s action stopped - $why" }
-            if (animationEveryTick(was.kind)) { runCatching { animationSink(player, STOP_ANIMATION) }; animationsSent++ }
+            if (animationEveryTick(was.kind)) {
+                runCatching { animationSink(player, STOP_ANIMATION) }; animationsSent++
+            }
         }
     }
 
@@ -463,34 +511,59 @@ object Skilling {
         tickCount++
         if (active.isNotEmpty()) {
             for ((player, a) in ArrayList(active.entries).map { it.key to it.value }) {
-              try {
-                val here = whereIs(player)
-                if (here.x != a.startTile.x || here.y != a.startTile.y || here.plane != a.startTile.plane) {
-                    stop(player, "moved from (${a.startTile.x},${a.startTile.y}) to (${here.x},${here.y})"); continue
-                }
-                val everyTick = animationEveryTick(a.kind)
-                if (!everyTick && tickCount == a.nextTick - 1) {
-                    animationFor(a.kind)?.let { ids -> runCatching { animationSink(player, ids) }; animationsSent++ }
-                }
-                if (tickCount < a.nextTick) {
-                    if (everyTick) animationFor(a.kind)?.let { ids -> runCatching { animationSink(player, ids) }; animationsSent++ }
-                    continue
-                }
-                val g = gather(a.ctx, a.kind, fromCycle = true)
-                when (g.outcome) {
-                    Outcome.GATHERED, Outcome.MISSED -> {
-                        a.nextTick = tickCount + CYCLE_TICKS; a.cycles++
-                        if (everyTick && active.containsKey(player)) animationFor(a.kind)?.let { ids -> runCatching { animationSink(player, ids) }; animationsSent++ }
+                try {
+                    val here = whereIs(player)
+                    if (here.x != a.startTile.x || here.y != a.startTile.y || here.plane != a.startTile.plane) {
+                        stop(
+                            player,
+                            "moved from (${a.startTile.x},${a.startTile.y}) to (${here.x},${here.y})"
+                        ); continue
                     }
-                    else -> stop(player, "cycle refused: ${g.outcome} ${g.detail}")
+                    val everyTick = animationEveryTick(a.kind)
+                    if (!everyTick && tickCount == a.nextTick - 1) {
+                        animationFor(a.kind, a.toolId)?.let { ids ->
+                            runCatching {
+                                animationSink(
+                                    player,
+                                    ids
+                                )
+                            }; animationsSent++
+                        }
+                    }
+                    if (tickCount < a.nextTick) {
+                        if (everyTick) animationFor(a.kind, a.toolId)?.let { ids ->
+                            runCatching {
+                                animationSink(
+                                    player,
+                                    ids
+                                )
+                            }; animationsSent++
+                        }
+                        continue
+                    }
+                    val g = gather(a.ctx, a.kind, fromCycle = true)
+                    when (g.outcome) {
+                        Outcome.GATHERED, Outcome.MISSED -> {
+                            a.nextTick = tickCount + CYCLE_TICKS; a.cycles++
+                            if (everyTick && active.containsKey(player)) animationFor(a.kind, a.toolId)?.let { ids ->
+                                runCatching {
+                                    animationSink(
+                                        player,
+                                        ids
+                                    )
+                                }; animationsSent++
+                            }
+                        }
+
+                        else -> stop(player, "cycle refused: ${g.outcome} ${g.detail}")
+                    }
+                } catch (t: Throwable) {
+                    containedFailures++
+                    runCatching { stop(player, "error: ${t.javaClass.simpleName}") }
+                    logger.error(t) {
+                        "skilling: ${player.name}'s ${a.kind} action failed and was stopped (failures: $containedFailures)"
+                    }
                 }
-              } catch (t: Throwable) {
-                containedFailures++
-                runCatching { stop(player, "error: ${t.javaClass.simpleName}") }
-                logger.error(t) {
-                    "skilling: ${player.name}'s ${a.kind} action failed and was stopped (failures: $containedFailures)"
-                }
-              }
             }
         }
         val due = synchronized(depleted) {
@@ -502,9 +575,9 @@ object Skilling {
             respawn(d)
             logger.info {
                 "skilling: loc ${d.originalLocId} respawned at (${d.key.x},${d.key.y},plane ${d.key.plane}) " +
-                    "after $RESPAWN_TICKS ticks (was " +
-                    (if (d.removed) "removed" else "stump ${d.depletedLocId} [${d.stumpSource}]") +
-                    ")"
+                        "after $RESPAWN_TICKS ticks (was " +
+                        (if (d.removed) "removed" else "stump ${d.depletedLocId} [${d.stumpSource}]") +
+                        ")"
             }
         }
         return due.size
@@ -520,7 +593,7 @@ object Skilling {
                         canopyWarned = true
                         logger.warn {
                             "skilling: could not restore canopy ${c.locId} at ${c.key}: " +
-                                "${it::class.simpleName}: ${it.message} (logged once)"
+                                    "${it::class.simpleName}: ${it.message} (logged once)"
                         }
                     }
                 }
@@ -535,7 +608,7 @@ object Skilling {
                 locChangeWarned = true
                 logger.warn {
                     "skilling: could not send respawn of loc ${d.originalLocId} at ${d.key}: " +
-                        "${it::class.simpleName}: ${it.message} (logged once)"
+                            "${it::class.simpleName}: ${it.message} (logged once)"
                 }
             }
         }.getOrNull()
@@ -559,7 +632,7 @@ object Skilling {
                 locChangeWarned = true
                 logger.warn {
                     "skilling: could not send LOC_ADD_CHANGE ($why) for loc $originalId at $key: " +
-                        "${it::class.simpleName}: ${it.message} (logged once)"
+                            "${it::class.simpleName}: ${it.message} (logged once)"
                 }
             }
         }.onSuccess { change ->
@@ -584,7 +657,7 @@ object Skilling {
                 canopyWarned = true
                 logger.warn {
                     "skilling: could not send LOC_DEL for canopy ${c.locId} at ${c.key}: " +
-                        "${it::class.simpleName}: ${it.message} (logged once)"
+                            "${it::class.simpleName}: ${it.message} (logged once)"
                 }
             }
         }.onSuccess { change ->
@@ -640,7 +713,11 @@ object Skilling {
     fun itemNameOf(id: Int): String? =
         if (!RsDatabase.available) null
         else itemNameMemo.computeIfAbsent(id) {
-            java.util.Optional.ofNullable(RsDatabase.queryOne("SELECT name FROM items WHERE id = ?", id) { it.getString(1) })
+            java.util.Optional.ofNullable(RsDatabase.queryOne("SELECT name FROM items WHERE id = ?", id) {
+                it.getString(
+                    1
+                )
+            })
         }.orElse(null)
 
     fun toolIn(container: ItemContainer, kind: ResourceNodes.Kind): Int? = toolIn(container, kind, Int.MAX_VALUE)
@@ -657,7 +734,9 @@ object Skilling {
             ResourceNodes.Kind.MINING -> PICKAXE_SUFFIX
             ResourceNodes.Kind.GATHERING -> return null
         }
+
         data class Held(val id: Int, val requirement: Int, val power: Int)
+
         val held = ArrayList<Held>()
         val ids = ArrayList<Int>()
         for (item in container.items() + (worn?.items() ?: emptyList())) ids += item.id
@@ -671,7 +750,8 @@ object Skilling {
             if (held.none { it.id == id }) held += Held(id, requirement, power)
         }
         if (held.isEmpty()) return null
-        return (held.filter { it.requirement <= level }.maxByOrNull { it.power } ?: held.minByOrNull { it.requirement })?.id
+        return (held.filter { it.requirement <= level }.maxByOrNull { it.power }
+            ?: held.minByOrNull { it.requirement })?.id
     }
 
     fun statFor(kind: ResourceNodes.Kind): Stat = when (kind) {
@@ -701,7 +781,7 @@ object Skilling {
             ResourceNodes.Kind.GATHERING -> null
         }
         val refEntry = if (SkillXpTable.enabled) SkillXpTable.requirementFor(kind, itemName) else null
-        val miningLadder = if (kind == ResourceNodes.Kind.MINING) MiningTable949.levelForItem(itemName) else null
+        val miningLadder = if (kind == ResourceNodes.Kind.MINING) MiningLevels.levelForItem(itemName) else null
         val (level, levelSource) = when {
             cacheLevel != null -> cacheLevel to "CACHE"
             miningLadder != null -> miningLadder to "MINING-TABLE"
@@ -736,7 +816,10 @@ object Skilling {
                     detail = "already gathering here; next cycle in ${running.nextTick - tickCount} tick(s)"
                 )
             }
-            if (running != null) stop(ctx.player, "re-clicked (${if (running.ctx.locId == locId) "same node, cycle due" else "a different node"})")
+            if (running != null) stop(
+                ctx.player,
+                "re-clicked (${if (running.ctx.locId == locId) "same node, cycle due" else "a different node"})"
+            )
         }
 
         val placement = LocInteraction.placementOf(locId, ctx.x, ctx.z, ctx.plane)
@@ -760,7 +843,7 @@ object Skilling {
             return Gather(
                 Outcome.NO_TOOL, locId, locName, kind,
                 detail = "no '*${if (kind == ResourceNodes.Kind.WOODCUTTING) HATCHET_SUFFIX else PICKAXE_SUFFIX}' in backpack, worn" +
-                    (if (toolbelt) " or tool belt" else " (tool belt off)")
+                        (if (toolbelt) " or tool belt" else " (tool belt off)")
             )
         }
 
@@ -814,7 +897,7 @@ object Skilling {
         if (!fromCycle) {
             faceLoc(
                 ctx.player, originX, originZ,
-                placement?.dx ?: 1, placement?.dz ?: 1
+                placement.dx, placement.dz
             )
         }
 
@@ -823,8 +906,15 @@ object Skilling {
             if (first > 0) {
                 val last = lastCycle[ctx.player]
                 val due = maxOf(tickCount + first, (last ?: Long.MIN_VALUE) + CYCLE_TICKS)
-                arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), due))
-                if (due - 1 == tickCount) animationFor(kind)?.let { ids -> runCatching { animationSink(ctx.player, ids) }; animationsSent++ }
+                arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), due, toolId = tool))
+                if (due - 1 == tickCount) animationFor(kind, tool)?.let { ids ->
+                    runCatching {
+                        animationSink(
+                            ctx.player,
+                            ids
+                        )
+                    }; animationsSent++
+                }
                 startMessage(kind)?.let { msg -> runCatching { messageSink(ctx.player, msg) }; messagesSent++ }
                 return Gather(
                     Outcome.STARTED, locId, locName, kind,
@@ -838,7 +928,7 @@ object Skilling {
         if (!fromCycle) {
             val last = lastCycle[ctx.player]
             if (last != null && tickCount - last < CYCLE_TICKS) {
-                arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), last + CYCLE_TICKS))
+                arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), last + CYCLE_TICKS, toolId = tool))
                 return Gather(
                     Outcome.REPEATING, locId, locName, kind,
                     itemId = resolved.itemId, itemName = resolved.itemName,
@@ -861,7 +951,10 @@ object Skilling {
                 playerLevel = playerLevel, toolId = tool,
                 detail = "cycle missed at chance %.3f".format(chance)
             )
-            if (!fromCycle) arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), tickCount + CYCLE_TICKS))
+            if (!fromCycle) arm(
+                ctx.player,
+                Active(ctx, kind, whereIs(ctx.player), tickCount + CYCLE_TICKS, toolId = tool)
+            )
             return miss
         }
         val add = container.add(resolved.itemId, 1)
@@ -909,26 +1002,26 @@ object Skilling {
                     sendCanopyRemoval(canopyRef)
                     logger.info {
                         "skilling: removed canopy loc ${canopyRef.locId} " +
-                            "'${Canopy.nameOf(canopyRef.locId) ?: "?"}' at (${canopyRef.key.x}," +
-                            "${canopyRef.key.y},plane ${canopyRef.key.plane}) shape ${canopyRef.key.shape} " +
-                            "rot ${canopyRef.rotation}"
+                                "'${Canopy.nameOf(canopyRef.locId) ?: "?"}' at (${canopyRef.key.x}," +
+                                "${canopyRef.key.y},plane ${canopyRef.key.plane}) shape ${canopyRef.key.shape} " +
+                                "rot ${canopyRef.rotation}"
                     }
                 } else logger.info {
                     "skilling: loc $locId at $key has no canopy on plane ${ctx.plane + 1}"
                 }
                 if (stump == null) logger.info {
                     "skilling: loc $locId '$locName' has no stump in data/seed/tree_stumps.tsv; " +
-                        "removed for $RESPAWN_TICKS tick(s)"
+                            "removed for $RESPAWN_TICKS tick(s)"
                 } else logger.info {
                     "skilling: loc $locId '$locName' -> stump ${stump.locId} [${stump.source}" +
-                        (if (stump.sampleRows > 0) ", ${stump.sampleRows} sample(s)" else "") + "]"
+                            (if (stump.sampleRows > 0) ", ${stump.sampleRows} sample(s)" else "") + "]"
                 }
             }
             stop(ctx.player, "the tree fell (stump)")
         } else if (depletes(kind) && fellsNow) {
             logger.warn {
                 "skilling: chopped loc $locId at (${ctx.x},${ctx.z},plane ${ctx.plane}) is not in map_loc; " +
-                    "the tree was not replaced"
+                        "the tree was not replaced"
             }
         }
 
@@ -947,9 +1040,16 @@ object Skilling {
         )
         logger.info { "skilling: $result" }
         cyclesPaid++
-        yieldMessage(kind, resolved.itemName)?.let { msg -> runCatching { messageSink(ctx.player, msg) }; messagesSent++ }
+        yieldMessage(kind, resolved.itemName)?.let { msg ->
+            runCatching {
+                messageSink(
+                    ctx.player,
+                    msg
+                )
+            }; messagesSent++
+        }
         if (!fromCycle) {
-            arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), tickCount + CYCLE_TICKS))
+            arm(ctx.player, Active(ctx, kind, whereIs(ctx.player), tickCount + CYCLE_TICKS, toolId = tool))
         }
         if (depletedTo != null) stop(ctx.player, "the node depleted")
         return result
@@ -961,10 +1061,12 @@ object Skilling {
     }.orElse(null)
 
     private fun toolRequirementUncached(toolId: Int): Int? {
-        val json = RsDatabase.queryOne("SELECT value FROM items_attr WHERE id = ? AND field = 'extra'", toolId) { it.getString(1) } ?: return null
+        val json = RsDatabase.queryOne("SELECT value FROM items_attr WHERE id = ? AND field = 'extra'", toolId) {
+            it.getString(1)
+        } ?: return null
         val params = com.opennxt.model.combat.NpcCombat.parseParams(json)
-        val level = params[750] ?: return null
-        val skill = params[749]
+        val level = params[Names950.paramId("wear_requires_stat_level1")] ?: return null
+        val skill = params[Names950.paramId("wear_requires_stat1")]
         return if (skill == null || skill == 0 || skill == Stat.MINING.id || skill == Stat.WOODCUTTING.id) level else null
     }
 
@@ -993,8 +1095,8 @@ object Skilling {
         val mine = ContentRegistry.onLocAction(ResourceNodes.MINE, ::onMine)
         logger.info {
             "skilling: bound '${ResourceNodes.CHOP_DOWN}' across $chopDownSpaced locs, " +
-                "'${ResourceNodes.CHOP_DOWN_HYPHEN}' across $chopDownHyphen, " +
-                "'${ResourceNodes.CHOP}' across $chop, '${ResourceNodes.MINE}' across $mine"
+                    "'${ResourceNodes.CHOP_DOWN_HYPHEN}' across $chopDownHyphen, " +
+                    "'${ResourceNodes.CHOP}' across $chop, '${ResourceNodes.MINE}' across $mine"
         }
         runCatching {
             val cov = Stumps.coverage()
@@ -1004,7 +1106,7 @@ object Skilling {
             val choppable = chopDown + chop
             logger.info {
                 "skilling stumps: ${cov.size} of $choppable choppable locs have a stump " +
-                    "(fixed $fixedValue, run $run, forced $forced)"
+                        "(fixed $fixedValue, run $run, forced $forced)"
             }
         }.onFailure { logger.warn(it) { "skilling stumps: the coverage line could not be derived" } }
         return Installed(chopDown, chop, mine)
