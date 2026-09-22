@@ -4,57 +4,58 @@ import com.google.gson.JsonParser
 import com.opennxt.model.InterfaceHash
 import com.opennxt.model.world.WorldPlayer
 import com.opennxt.net.game.serverprot.RunClientScript
-import com.opennxt.net.game.serverprot.ifaces.IfClosesub
-import com.opennxt.net.game.serverprot.ifaces.IfOpenSub
-import com.opennxt.net.game.serverprot.ifaces.IfSetevents
-import com.opennxt.net.game.serverprot.ifaces.IfSethide
 import com.opennxt.net.game.serverprot.ifaces.IfSettext
 import com.opennxt.net.game.serverprot.variables.VarpLarge
 import com.opennxt.net.game.serverprot.variables.VarpSmall
 import com.opennxt.resources.sqlite.RsDatabase
+import com.opennxt.resources.Names950
 import mu.KotlinLogging
+import java.util.Collections
+import java.util.WeakHashMap
 
 object ToolBeltPanel {
     private val logger = KotlinLogging.logger { }
 
     val enabled: Boolean get() = System.getProperty("opennxt.experiment.toolbelt.panel") != "false"
 
-    const val IFACE = 1944
+    val IFACE = Names950.ifc("toolbelt_v2")
 
-    const val TOPLEVEL = 1477
+    val TOPLEVEL = Names950.ifc("toplevel_v2")
 
-    const val MOUNT = 728
+    val MOUNT = Names950.comp("toplevel_v2:fullmodal_window_content").component
 
-    const val SLOT_GRID = 7
+    val SLOT_GRID = Names950.comp("toolbelt_v2:toolbelt_click_layer").component
 
-    const val HIDE_COMPONENT = 18
+    val HIDE_COMPONENT = Names950.comp("toolbelt_v2:settings_button_disabled_layer").component
 
-    const val SINGLE_COMPONENT = 29
+    val SINGLE_COMPONENT = Names950.comp("toolbelt_v2:icon_background").component
 
-    const val DESCRIPTION_COMPONENT = 27
+    val DESCRIPTION_COMPONENT = Names950.comp("toolbelt_v2:info_desc").component
 
-    const val CLOSE_COMPONENT = 102
+    val CLOSE_COMPONENT = Names950.comp("toolbelt_v2:mainmodal_window_close_button").component
 
     const val FIRST_SLOT = 0
     const val LAST_SLOT = 77
     const val SLOT_MASK = 6
     const val SINGLE_MASK = 2
 
-    const val SCRIPT_LAYOUT = 14150
+    val SCRIPT_LAYOUT = Names950.clientscriptId("overlaychanged")
     const val SCRIPT_LAYOUT_ARG = 6
+
+    // 14097 is a generic proc (no name in proc.sym); kept numeric.
     const val SCRIPT_FILL = 14097
     const val SCRIPT_FILL_ARG = 0
 
-    const val VARP_ON_OPEN = 9412
+    val VARP_ON_OPEN = Names950.varpId("last_modal_overlay_id")
     const val VARP_ON_OPEN_VALUE = 0
 
-    const val VARP_SELECTED_STRUCT = 7863
+    val VARP_SELECTED_STRUCT = Names950.varpId("toolbelt_struct")
 
-    const val OPEN_BUTTON_IFACE = 1464
-    const val OPEN_BUTTON_COMPONENT = 19
+    val OPEN_BUTTON_IFACE = Names950.ifc("toplevel_v2_worn")
+    val OPEN_BUTTON_COMPONENT = Names950.comp("toplevel_v2_worn:button_layer").component
 
-    const val OPEN_BUTTON_IFACE_WINDOWED = 1462
-    const val OPEN_BUTTON_COMPONENT_WINDOWED = 35
+    val OPEN_BUTTON_IFACE_WINDOWED = Names950.ifc("toplevel_v2_parent_suboverlay_worn")
+    val OPEN_BUTTON_COMPONENT_WINDOWED = Names950.comp("toplevel_v2_parent_suboverlay_worn:button_layer").component
 
     const val OPEN_BUTTON_SLOT = 4353
 
@@ -64,12 +65,12 @@ object ToolBeltPanel {
 
     fun isOpenButton(iface: Int, component: Int, slot: Int): Boolean =
         slot == OPEN_BUTTON_SLOT &&
-            ((iface == OPEN_BUTTON_IFACE && component == OPEN_BUTTON_COMPONENT) ||
-                (iface == OPEN_BUTTON_IFACE_WINDOWED && component == OPEN_BUTTON_COMPONENT_WINDOWED))
+                ((iface == OPEN_BUTTON_IFACE && component == OPEN_BUTTON_COMPONENT) ||
+                        (iface == OPEN_BUTTON_IFACE_WINDOWED && component == OPEN_BUTTON_COMPONENT_WINDOWED))
 
-    const val P_ITEM = 6980
-    const val P_UPGRADEABLE = 6981
-    const val P_OBTAINED = 6983
+    val P_ITEM = Names950.paramId("toolbelt_object")
+    val P_UPGRADEABLE = Names950.paramId("toolbelt_upgradeable")
+    val P_OBTAINED = Names950.paramId("toolbelt_unlock_info")
 
     const val OBTAINED_DEFAULT = "Obtained automatically."
     const val UPGRADE_CLAUSE =
@@ -84,8 +85,8 @@ object ToolBeltPanel {
         val byStruct = HashMap<Int, MutableMap<Int, Pair<Int?, String?>>>()
         RsDatabase.queryAll(
             "SELECT struct_id, prop, intvalue, stringvalue FROM struct_param " +
-                " WHERE prop IN ($P_ITEM, $P_UPGRADEABLE, $P_OBTAINED) " +
-                "   AND struct_id IN (SELECT struct_id FROM struct_param WHERE prop = $P_ITEM)"
+                    " WHERE prop IN ($P_ITEM, $P_UPGRADEABLE, $P_OBTAINED) " +
+                    "   AND struct_id IN (SELECT struct_id FROM struct_param WHERE prop = $P_ITEM)"
         ) { rs ->
             val sid = rs.getInt("struct_id")
             val prop = rs.getInt("prop")
@@ -140,7 +141,9 @@ object ToolBeltPanel {
     var closes: Int = 0
         private set
 
-    internal fun resetCounters() { opens = 0; slotClicks = 0; arms = 0; closes = 0 }
+    internal fun resetCounters() {
+        opens = 0; slotClicks = 0; arms = 0; closes = 0
+    }
 
     fun armOpenButton(
         player: WorldPlayer,
@@ -159,37 +162,56 @@ object ToolBeltPanel {
         return STRIP_RANGES.size
     }
 
+    private val openSet: MutableSet<WorldPlayer> =
+        Collections.newSetFromMap(Collections.synchronizedMap(WeakHashMap<WorldPlayer, Boolean>()))
+
+    fun isOpen(player: WorldPlayer): Boolean = player in openSet
+
     fun open(player: WorldPlayer): Boolean {
         if (!enabled) return false
         if (!player.client.channel.isActive) return false
-        val w = player.client
-        w.write(VarpSmall(VARP_ON_OPEN, VARP_ON_OPEN_VALUE))
-        w.write(IfSethide(InterfaceHash(IFACE, HIDE_COMPONENT), true))
-        w.write(IfOpenSub(IFACE, true, InterfaceHash(TOPLEVEL, MOUNT)))
-        w.write(RunClientScript(SCRIPT_LAYOUT, arrayOf(SCRIPT_LAYOUT_ARG)))
-        w.write(IfSetevents(InterfaceHash(IFACE, SLOT_GRID), FIRST_SLOT, LAST_SLOT, SLOT_MASK))
-        w.write(IfSetevents(InterfaceHash(IFACE, SINGLE_COMPONENT), 65535, 65535, SINGLE_MASK))
-        w.write(RunClientScript(SCRIPT_FILL, arrayOf(SCRIPT_FILL_ARG)))
-        opens++
-        logger.info {
-            "toolbelt panel: opened $IFACE at $TOPLEVEL:$MOUNT for ${player.name}, " +
-                "${ToolBelt.storedIdsFor(player.contentPlayer).size} stored tool(s)"
+        if (player in openSet) {
+            close(player, "the tool belt button was clicked again")
+            return true
         }
-        return true
+        try {
+            player.client.write(VarpSmall(VARP_ON_OPEN, VARP_ON_OPEN_VALUE))
+            player.interfaces.open(id = IFACE, parent = TOPLEVEL, component = MOUNT, walkable = true)
+            player.interfaces.hide(IFACE, HIDE_COMPONENT, true)
+            player.client.write(RunClientScript(SCRIPT_LAYOUT, arrayOf(SCRIPT_LAYOUT_ARG)))
+            player.interfaces.events(IFACE, SLOT_GRID, FIRST_SLOT, LAST_SLOT, SLOT_MASK)
+            player.interfaces.events(IFACE, SINGLE_COMPONENT, 65535, 65535, SINGLE_MASK)
+            player.client.write(RunClientScript(SCRIPT_FILL, arrayOf(SCRIPT_FILL_ARG)))
+            openSet.add(player)
+            opens++
+            logger.info {
+                "toolbelt panel: opened $IFACE at $TOPLEVEL:$MOUNT for ${player.name}, " +
+                        "${ToolBelt.storedIdsFor(player.contentPlayer).size} stored tool(s)"
+            }
+            return true
+        } catch (t: Throwable) {
+            openSet.remove(player)
+            logger.error(t) { "toolbelt panel: could not open $IFACE for ${player.name}" }
+            return false
+        }
     }
 
-    fun close(player: WorldPlayer): Boolean {
-        if (!enabled) return false
+    fun close(player: WorldPlayer, reason: String = "close requested"): Boolean {
+        if (!openSet.remove(player)) return false
         if (!player.client.channel.isActive) return false
-        val w = player.client
-        w.write(VarpSmall(VARP_ON_OPEN, VARP_ON_OPEN_VALUE))
-        w.write(IfClosesub(InterfaceHash(TOPLEVEL, MOUNT)))
-        w.write(RunClientScript(SCRIPT_LAYOUT, arrayOf(SCRIPT_LAYOUT_ARG)))
-        closes++
-        logger.info {
-            "toolbelt panel: closed $IFACE at $TOPLEVEL:$MOUNT for ${player.name}"
+        try {
+            player.client.write(VarpSmall(VARP_ON_OPEN, VARP_ON_OPEN_VALUE))
+            player.interfaces.close(id = TOPLEVEL, component = MOUNT)
+            player.client.write(RunClientScript(SCRIPT_LAYOUT, arrayOf(SCRIPT_LAYOUT_ARG)))
+            closes++
+            logger.info {
+                "toolbelt panel: closed $IFACE at $TOPLEVEL:$MOUNT for ${player.name} ($reason)"
+            }
+            return true
+        } catch (t: Throwable) {
+            logger.error(t) { "toolbelt panel: could not close $IFACE for ${player.name}" }
+            return false
         }
-        return true
     }
 
     fun handleSlotClick(player: WorldPlayer, slot: Int): Boolean {
@@ -206,26 +228,27 @@ object ToolBeltPanel {
         slotClicks++
         logger.info {
             "toolbelt panel: ${player.name} belt slot $slot -> struct ${s.structId} (item ${s.itemId}" +
-                "${if (s.upgradeable) ", upgradeable" else ""})"
+                    "${if (s.upgradeable) ", upgradeable" else ""})"
         }
         return true
     }
 
-    const val STRIP_SCRIPT = 16554
+    val STRIP_SCRIPT = Names950.clientscriptId("child_buttons_init")
 
-    const val STRIP_KIND_ENUM = 5134
+    val STRIP_KIND_ENUM = Names950.enumId("child_options_enum")
 
-    const val STRIP_TABLE = 28
+    val STRIP_TABLE = Names950.dbtableId("child_options")
 
-    const val TOOL_BELT_ROW = 1200
+    val TOOL_BELT_ROW = Names950.dbrowId("worn_toolbelt")
 
-    const val TOGGLE_DRAGGING_ROW = 6976
+    val TOGGLE_DRAGGING_ROW = Names950.dbrowId("inv_drag_toggle")
 
-    const val BACKPACK_STRIP_IFACE = 1473
-    const val BACKPACK_STRIP_COMPONENT = 9
+    val BACKPACK_STRIP_IFACE = Names950.ifc("toplevel_v2_inventory")
+    val BACKPACK_STRIP_COMPONENT = Names950.comp("toplevel_v2_inventory:button_layer").component
 
-    const val BACKPACK_STRIP_IFACE_WINDOWED = 1474
-    const val BACKPACK_STRIP_COMPONENT_WINDOWED = 12
+    val BACKPACK_STRIP_IFACE_WINDOWED = Names950.ifc("toplevel_v2_parent_suboverlay_inventory")
+    val BACKPACK_STRIP_COMPONENT_WINDOWED =
+        Names950.comp("toplevel_v2_parent_suboverlay_inventory:button_layer").component
 
     data class StripRow(val kind: Int, val key: Int, val dbrow: Int, val name: String)
 
@@ -310,35 +333,50 @@ object ToolBeltPanel {
     var stripClicks: Int = 0
         private set
 
-    internal fun resetStripCounter() { stripClicks = 0 }
+    internal fun resetStripCounter() {
+        stripClicks = 0
+    }
 
     fun noteStripClick(player: WorldPlayer, iface: Int, component: Int, slot: Int): StripRow? {
         val row = stripRowAt(iface, component, slot) ?: return null
         stripClicks++
         logger.info {
             "icon strip: ${player.name} clicked $iface:$component slot $slot = kind ${row.kind} key ${row.key} " +
-                "dbrow ${row.dbrow} '${row.name}'" +
-                (if (isWornStatsRow(row)) "" else " (not handled)")
+                    "dbrow ${row.dbrow} '${row.name}'" +
+                    (if (isWornStatsRow(row)) "" else " (not handled)")
         }
         return row
     }
 
-    const val WORN_STATS_ROW = 1017
+    val WORN_STATS_ROW = Names950.dbrowId("worn_combat_stats")
     const val WORN_STRIP_KIND = 3
-    const val WORN_STATS_CATEGORY = 21142
-    const val WORN_STATS_TAB = 21148
+    val WORN_STATS_CATEGORY = Names950.structId("toplevel_v2_parent_my_hero")
+    val WORN_STATS_TAB = Names950.structId("toplevel_v2_parent_tab_loadout")
 
-    fun isWornStatsRow(row: StripRow): Boolean = row.kind == WORN_STRIP_KIND && row.key == 0 && row.dbrow == WORN_STATS_ROW
+    fun isWornStatsRow(row: StripRow): Boolean =
+        row.kind == WORN_STRIP_KIND && row.key == 0 && row.dbrow == WORN_STATS_ROW
+
+    private val INV_OVERLAY_ITEM_LAYER = Names950.comp("toplevel_v2_parent_suboverlay_inventory:item_layer").component
+    private val INV_OVERLAY_PREMIUM_ITEM_LAYER =
+        Names950.comp("toplevel_v2_parent_suboverlay_inventory:premium_currency_item_layer").component
+    private val WORN_OVERLAY_ITEM_LAYER = Names950.comp("toplevel_v2_parent_suboverlay_worn:item_layer").component
 
     val LOADOUT_WINDOW_EVENTS: List<IntArray> = listOf(
-        intArrayOf(1474, 8, 0, 27, 15433102),
-        intArrayOf(1474, 24, 0, 17, 1422),
-        intArrayOf(1474, 12, 0, 1, 2099198), intArrayOf(1474, 12, 4096, 4097, 2099198), intArrayOf(1474, 12, 4352, 4353, 2099198),
-        intArrayOf(1474, 12, 4608, 4609, 2099198), intArrayOf(1474, 12, 4864, 4865, 2099198), intArrayOf(1474, 12, 5120, 5121, 2099198),
-        intArrayOf(1462, 31, 0, 18, 15302654),
-        intArrayOf(1462, 35, 0, 1, 2046), intArrayOf(1462, 35, 4096, 4097, 2046), intArrayOf(1462, 35, 4352, 4353, 2046),
-        intArrayOf(1462, 35, 4608, 4609, 2046), intArrayOf(1462, 35, 4864, 4865, 2046),
-        intArrayOf(1462, 31, 0, 18, 10749950),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, INV_OVERLAY_ITEM_LAYER, 0, 27, 15433102),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, INV_OVERLAY_PREMIUM_ITEM_LAYER, 0, 17, 1422),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, BACKPACK_STRIP_COMPONENT_WINDOWED, 0, 1, 2099198),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, BACKPACK_STRIP_COMPONENT_WINDOWED, 4096, 4097, 2099198),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, BACKPACK_STRIP_COMPONENT_WINDOWED, 4352, 4353, 2099198),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, BACKPACK_STRIP_COMPONENT_WINDOWED, 4608, 4609, 2099198),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, BACKPACK_STRIP_COMPONENT_WINDOWED, 4864, 4865, 2099198),
+        intArrayOf(BACKPACK_STRIP_IFACE_WINDOWED, BACKPACK_STRIP_COMPONENT_WINDOWED, 5120, 5121, 2099198),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, WORN_OVERLAY_ITEM_LAYER, 0, 18, 15302654),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, OPEN_BUTTON_COMPONENT_WINDOWED, 0, 1, 2046),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, OPEN_BUTTON_COMPONENT_WINDOWED, 4096, 4097, 2046),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, OPEN_BUTTON_COMPONENT_WINDOWED, 4352, 4353, 2046),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, OPEN_BUTTON_COMPONENT_WINDOWED, 4608, 4609, 2046),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, OPEN_BUTTON_COMPONENT_WINDOWED, 4864, 4865, 2046),
+        intArrayOf(OPEN_BUTTON_IFACE_WINDOWED, WORN_OVERLAY_ITEM_LAYER, 0, 18, 10749950),
     )
 
     fun armLoadoutWindow(player: WorldPlayer): Int {
@@ -359,15 +397,15 @@ object ToolBeltPanel {
         }
         val opened = ParentWindows.open(player, WORN_STATS_CATEGORY, WORN_STATS_TAB)
         val armed = if (opened) armLoadoutWindow(player) else 0
-        if (armed > 0) logger.info { "icon strip: armed $armed of ${LOADOUT_WINDOW_EVENTS.size} event rows on 1474 / 1462 for ${player.name}" }
+        if (armed > 0) logger.info { "icon strip: armed $armed of ${LOADOUT_WINDOW_EVENTS.size} event rows on $BACKPACK_STRIP_IFACE_WINDOWED / $OPEN_BUTTON_IFACE_WINDOWED for ${player.name}" }
         logger.info {
             "icon strip: ${player.name} pressed '${row.name}' ($iface) -> Hero window " +
-                "${if (opened) "opened" else "not opened"}"
+                    "${if (opened) "opened" else "not opened"}"
         }
         return true
     }
 
     fun describe(): String =
         "toolbelt panel: interface $IFACE at $TOPLEVEL:$MOUNT, ${slots.size} belt structs, " +
-            "opened from slot $OPEN_BUTTON_SLOT of $OPEN_BUTTON_IFACE:$OPEN_BUTTON_COMPONENT"
+                "opened from slot $OPEN_BUTTON_SLOT of $OPEN_BUTTON_IFACE:$OPEN_BUTTON_COMPONENT"
 }
