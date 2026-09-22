@@ -9,16 +9,17 @@ import com.opennxt.net.game.serverprot.MessageGame
 import com.opennxt.net.game.serverprot.RunClientScript
 import com.opennxt.net.game.serverprot.UpdateInvFull
 import com.opennxt.net.game.serverprot.UpdateInvPartial
+import com.opennxt.resources.Names950
 import mu.KotlinLogging
 
 object MoneyPouch {
     private val logger = KotlinLogging.logger { }
 
-    const val INV = 623
-    const val COINS = 995
+    val INV = Names950.invId("money_pouch")
+    val COINS = Names950.itemId("coins")
     const val ADD_ACTION = "Add to pouch"
     const val MESSAGE_TYPE = 109
-    const val SCRIPT_TOTAL = 5559
+    val SCRIPT_TOTAL = Names950.clientscriptId("money_pouch_update_amount")
     const val MAX = Int.MAX_VALUE
 
     val enabled: Boolean get() = System.getProperty("opennxt.content.moneyPouch") != "off"
